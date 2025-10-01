@@ -16,36 +16,36 @@ const Skills = () => {
     {
       title: 'Développement',
       skills: [
-        { name: 'HTML/CSS', icon: <FaHtml5 />, level: 85 },
-        { name: 'JavaScript', icon: <SiJavascript />, level: 75 },
-        { name: 'React', icon: <FaReact />, level: 70 },
-        { name: 'Java', icon: <FaJava />, level: 65 },
-        { name: 'Tailwind CSS', icon: <SiTailwindcss />, level: 80 },
+        { name: 'HTML/CSS', icon: <FaHtml5 />, level: 85, color: '#E34F26' },
+        { name: 'JavaScript', icon: <SiJavascript />, level: 75, color: '#F7DF1E' },
+        { name: 'React', icon: <FaReact />, level: 70, color: '#61DAFB' },
+        { name: 'Java', icon: <FaJava />, level: 65, color: '#007396' },
+        { name: 'Tailwind CSS', icon: <SiTailwindcss />, level: 80, color: '#06B6D4' },
       ],
     },
     {
       title: 'Design & Créativité',
       skills: [
-        { name: 'Suite Adobe', icon: <SiAdobecreativecloud />, level: 80 },
-        { name: 'Figma', icon: <FaFigma />, level: 75 },
-        { name: 'Photographie', icon: <FaCamera />, level: 85 },
-        { name: 'Prototypage', icon: <FaFigma />, level: 80 },
+        { name: 'Suite Adobe', icon: <SiAdobecreativecloud />, level: 80, color: '#FF0000' },
+        { name: 'Figma', icon: <FaFigma />, level: 75, color: '#F24E1E' },
+        { name: 'Photographie', icon: <FaCamera />, level: 85, color: '#6366f1' },
+        { name: 'Prototypage', icon: <FaFigma />, level: 80, color: '#0ACF83' },
       ],
     },
     {
       title: 'Outils & Productivité',
       skills: [
-        { name: 'Suite Office', icon: <FaFileWord />, level: 90 },
-        { name: 'Mailchimp', icon: <FaMailchimp />, level: 75 },
-        { name: 'Notion', icon: <SiNotion />, level: 85 },
-        { name: 'ERP/CMS', icon: <MdWork />, level: 70 },
+        { name: 'Suite Office', icon: <FaFileWord />, level: 90, color: '#185ABD' },
+        { name: 'Mailchimp', icon: <FaMailchimp />, level: 75, color: '#FFE01B' },
+        { name: 'Notion', icon: <SiNotion />, level: 85, color: '#000000' },
+        { name: 'ERP/CMS', icon: <MdWork />, level: 70, color: '#6366f1' },
       ],
     },
     {
       title: 'Technologies Émergentes',
       skills: [
-        { name: 'IA', icon: <FaRobot />, level: 65 },
-        { name: 'Automatisations', icon: <FaRobot />, level: 70 },
+        { name: 'IA', icon: <FaRobot />, level: 65, color: '#8B5CF6' },
+        { name: 'Automatisations', icon: <FaRobot />, level: 70, color: '#6366f1' },
       ],
     },
   ];
@@ -80,7 +80,17 @@ const Skills = () => {
                   <div key={skillIndex}>
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-3">
-                        <span className="text-2xl gradient-text">{skill.icon}</span>
+                        <motion.span 
+                          className="text-3xl" 
+                          style={{ 
+                            color: skill.color || '#6366f1',
+                            filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))'
+                          }}
+                          whileHover={{ scale: 1.2, rotate: 5 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          {skill.icon}
+                        </motion.span>
                         <span className="font-semibold text-gray-700">{skill.name}</span>
                       </div>
                       <span className="text-primary font-semibold">{skill.level}%</span>
