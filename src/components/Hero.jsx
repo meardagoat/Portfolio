@@ -98,80 +98,36 @@ const Hero = () => {
               </motion.div>
               {/* Effet de code animé */}
               <motion.div
-                className="absolute -bottom-4 -right-4 w-32 h-32 flex items-center justify-center"
+                className="absolute -bottom-4 -right-4 w-28 h-28 flex items-center justify-center bg-black/40 backdrop-blur-md rounded-full border-2 border-white/20"
                 animate={{
-                  rotate: [0, 360],
+                  scale: [1, 1.1, 1],
+                  borderColor: ['rgba(255,107,53,0.2)', 'rgba(191,90,242,0.3)', 'rgba(10,132,255,0.2)', 'rgba(255,107,53,0.2)'],
                 }}
                 transition={{
-                  duration: 20,
+                  duration: 4,
                   repeat: Infinity,
-                  ease: "linear",
+                  ease: "easeInOut",
                 }}
               >
-                {/* Brackets animés */}
-                <motion.div className="relative w-full h-full">
-                  {/* < bracket */}
-                  <motion.div
-                    className="absolute top-0 left-0 text-6xl font-bold"
-                    style={{
-                      background: 'linear-gradient(to right, #FF6B35, #BF5AF2)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      filter: 'drop-shadow(0 0 10px rgba(255,107,53,0.5))',
-                    }}
-                    animate={{
-                      x: [-5, 5, -5],
-                      opacity: [0.6, 1, 0.6],
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                  >
-                    &lt;
-                  </motion.div>
-                  
-                  {/* /> bracket */}
-                  <motion.div
-                    className="absolute bottom-0 right-0 text-6xl font-bold"
-                    style={{
-                      background: 'linear-gradient(to right, #0A84FF, #BF5AF2)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      filter: 'drop-shadow(0 0 10px rgba(10,132,255,0.5))',
-                    }}
-                    animate={{
-                      x: [5, -5, 5],
-                      opacity: [0.6, 1, 0.6],
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: 1,
-                    }}
-                  >
-                    /&gt;
-                  </motion.div>
-                  
-                  {/* Point central qui pulse */}
-                  <motion.div
-                    className="absolute top-1/2 left-1/2 w-3 h-3 rounded-full"
-                    style={{
-                      background: 'linear-gradient(to right, #FF6B35, #BF5AF2, #0A84FF)',
-                      boxShadow: '0 0 20px rgba(191,90,242,0.8)',
-                    }}
-                    animate={{
-                      scale: [1, 1.5, 1],
-                      opacity: [0.5, 1, 0.5],
-                    }}
-                    transition={{
-                      duration: 1.5,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                  />
+                {/* Symbole </> unifié */}
+                <motion.div
+                  className="text-5xl font-bold tracking-tighter"
+                  style={{
+                    background: 'linear-gradient(to right, #FF6B35, #BF5AF2, #0A84FF)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    filter: 'drop-shadow(0 0 15px rgba(191,90,242,0.6))',
+                  }}
+                  animate={{
+                    opacity: [0.7, 1, 0.7],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                >
+                  &lt;/&gt;
                 </motion.div>
               </motion.div>
             </div>
