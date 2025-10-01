@@ -51,7 +51,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="competences" className="py-20 bg-white">
+    <section id="competences" className="py-20 bg-black">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -72,7 +72,7 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: catIndex * 0.1 }}
-              className="bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-2xl shadow-lg"
+              className="bg-dark-gray/30 backdrop-blur-lg border border-white/10 p-8 rounded-2xl shadow-lg"
             >
               <h3 className="text-2xl font-bold text-white mb-6">{category.title}</h3>
               <div className="space-y-4">

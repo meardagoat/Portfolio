@@ -25,7 +25,7 @@ const About = () => {
   ];
 
   return (
-    <section id="apropos" className="py-20 bg-white">
+    <section id="apropos" className="py-20 bg-black">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -56,7 +56,7 @@ const About = () => {
                     <span className="font-semibold text-gray-200">{lang.name}</span>
                     <span className="text-gray-500">{lang.level}</span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-3">
+                  <div className="w-full bg-dark-gray rounded-full h-3">
                     <motion.div
                       className="bg-gradient-to-r from-primary to-secondary h-3 rounded-full"
                       initial={{ width: 0 }}

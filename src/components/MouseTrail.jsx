@@ -34,31 +34,18 @@ const MouseTrail = () => {
           left: `${mousePosition.x}px`,
           top: `${mousePosition.y}px`,
           transform: 'translate(-50%, -50%)',
-          opacity: isMoving ? 0.6 : 0,
+          opacity: isMoving ? 0.4 : 0,
         }}
       >
         {/* Gradient radial multicolore */}
         <div
           className="w-96 h-96 rounded-full"
           style={{
-            background: 'radial-gradient(circle, rgba(255,107,53,0.4) 0%, rgba(10,132,255,0.3) 30%, rgba(191,90,242,0.2) 60%, transparent 80%)',
-            filter: 'blur(40px)',
+            background: 'radial-gradient(circle, rgba(255,107,53,0.3) 0%, rgba(10,132,255,0.2) 30%, rgba(191,90,242,0.15) 60%, transparent 80%)',
+            filter: 'blur(50px)',
           }}
         />
       </div>
-      
-      {/* Point lumineux au centre du curseur */}
-      <div
-        className="absolute w-2 h-2 rounded-full transition-all duration-75"
-        style={{
-          left: `${mousePosition.x}px`,
-          top: `${mousePosition.y}px`,
-          transform: 'translate(-50%, -50%)',
-          background: 'radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(10,132,255,0.4) 50%, transparent 100%)',
-          opacity: isMoving ? 1 : 0,
-          boxShadow: '0 0 20px rgba(10,132,255,0.6)',
-        }}
-      />
     </div>
   );
 };
