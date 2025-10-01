@@ -34,29 +34,6 @@ Je suis actuellement étudiant à **EPITECH**, spécialisé en **Business & Tech
 ![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)
 ![Mailchimp](https://img.shields.io/badge/Mailchimp-FFE01B?style=for-the-badge&logo=mailchimp&logoColor=black)
 
-## 🎯 Expériences professionnelles
-
-### 🚴 GAYA Bike (2025)
-**Assistant E-commerce et digital**
-- Gestion des opérations e-commerce
-- Marketing digital
-
-### 🏨 B&B Hotel Paris Malakoff (2023-2024)
-**Réceptionniste polyvalent**
-- Accueil et service client
-- Gestion des réservations
-
-### 📦 DPL International (2022-2023)
-**Employé échelon 1**
-- Qualité et préparation de commandes
-- Gestion d'inventaire
-
-### 🍽️ MIAM REPUBLIQUE (2021-2022)
-**Community Manager**
-- Gestion des réseaux sociaux
-- Campagnes marketing
-- Création de supports de communication
-
 ## 🏆 Récompenses
 
 - 🥇 **Meilleur ONG au Sénégal** (2017)
