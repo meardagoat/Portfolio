@@ -100,14 +100,20 @@ const Contact = () => {
                 className="block"
               >
                 <motion.div
-                  className="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-2xl text-center hover:shadow-xl transition-shadow h-48 flex flex-col items-center justify-center"
+                  className="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-2xl text-center hover:shadow-xl transition-shadow h-48 flex flex-col items-center justify-center border-2 border-transparent hover:border-primary"
                   whileHover={{ scale: 1.05, y: -5 }}
                 >
-                  <div className="text-5xl gradient-text mb-4 flex justify-center">
-                    {info.icon}
-                  </div>
+                  <motion.div 
+                    className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mb-4 shadow-lg"
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <span className="text-3xl text-white">
+                      {info.icon}
+                    </span>
+                  </motion.div>
                   <h3 className="text-xl font-bold text-gray-800 mb-2">{info.title}</h3>
-                  <p className="text-gray-600 text-sm">{info.value}</p>
+                  <p className="text-gray-600 text-sm break-words">{info.value}</p>
                 </motion.div>
               </motion.a>
             ))}
