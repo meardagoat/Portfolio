@@ -53,7 +53,7 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+    <section id="experience" className="py-20 bg-black">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -63,7 +63,7 @@ const Experience = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">Expériences professionnelles</h2>
-          <p className="text-gray-600 text-lg">Mon parcours professionnel et mes réalisations</p>
+          <p className="text-gray-300 text-lg">Mon parcours professionnel et mes réalisations</p>
         </motion.div>
 
         <div className="relative">
@@ -84,15 +84,15 @@ const Experience = () => {
               >
                 <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
                   <motion.div
-                    className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow"
+                    className="bg-dark-gray/50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow"
                     whileHover={{ scale: 1.03 }}
                   >
                     <span className="inline-block bg-gradient-to-r from-primary to-secondary text-white px-4 py-1 rounded-full text-sm font-semibold mb-3">
                       {exp.year}
                     </span>
-                    <h3 className="text-xl font-bold text-gray-800 mb-2">{exp.title}</h3>
+                    <h3 className="text-xl font-bold text-white mb-2">{exp.title}</h3>
                     <h4 className="text-lg text-primary font-semibold mb-3">{exp.role}</h4>
-                    <p className="text-gray-600">{exp.description}</p>
+                    <p className="text-gray-300">{exp.description}</p>
                   </motion.div>
                 </div>
 

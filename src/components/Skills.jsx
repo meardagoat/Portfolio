@@ -61,7 +61,7 @@ const Skills = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">Compétences</h2>
-          <p className="text-gray-600 text-lg">Technologies et outils que je maîtrise</p>
+          <p className="text-gray-300 text-lg">Technologies et outils que je maîtrise</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -74,7 +74,7 @@ const Skills = () => {
               transition={{ duration: 0.6, delay: catIndex * 0.1 }}
               className="bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-2xl shadow-lg"
             >
-              <h3 className="text-2xl font-bold text-gray-800 mb-6">{category.title}</h3>
+              <h3 className="text-2xl font-bold text-white mb-6">{category.title}</h3>
               <div className="space-y-4">
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex}>
@@ -91,11 +91,11 @@ const Skills = () => {
                         >
                           {skill.icon}
                         </motion.span>
-                        <span className="font-semibold text-gray-700">{skill.name}</span>
+                        <span className="font-semibold text-gray-200">{skill.name}</span>
                       </div>
                       <span className="text-primary font-semibold">{skill.level}%</span>
                     </div>
-                    <div className="w-full bg-white rounded-full h-2.5">
+                    <div className="w-full bg-dark-gray/50 rounded-full h-2.5">
                       <motion.div
                         className="bg-gradient-to-r from-primary to-secondary h-2.5 rounded-full"
                         initial={{ width: 0 }}

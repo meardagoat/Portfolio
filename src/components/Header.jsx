@@ -20,7 +20,7 @@ const Header = () => {
   return (
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
+        isScrolled ? 'bg-dark-gray/50 shadow-lg' : 'bg-transparent'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -39,7 +39,7 @@ const Header = () => {
               <motion.button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase().replace('à ', '').replace('é', 'e'))}
-                className="text-gray-700 hover:text-primary transition-colors font-medium"
+                className="text-gray-200 hover:text-primary transition-colors font-medium"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: -20 }}

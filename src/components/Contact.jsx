@@ -83,7 +83,7 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">Me contacter</h2>
-          <p className="text-gray-600 text-lg">N'hésitez pas à me contacter pour discuter de vos projets</p>
+          <p className="text-gray-300 text-lg">N'hésitez pas à me contacter pour discuter de vos projets</p>
         </motion.div>
 
         <div className="max-w-6xl mx-auto">
@@ -112,8 +112,8 @@ const Contact = () => {
                       {info.icon}
                     </span>
                   </motion.div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">{info.title}</h3>
-                  <p className="text-gray-600 text-sm break-words">{info.value}</p>
+                  <h3 className="text-xl font-bold text-white mb-2">{info.title}</h3>
+                  <p className="text-gray-300 text-sm break-words">{info.value}</p>
                 </motion.div>
               </motion.a>
             ))}
@@ -127,11 +127,11 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
             className="bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-2xl shadow-xl mb-12"
           >
-            <h3 className="text-3xl font-bold text-gray-800 mb-6 text-center">Envoyez-moi un message</h3>
+            <h3 className="text-3xl font-bold text-white mb-6 text-center">Envoyez-moi un message</h3>
             <form onSubmit={handleSubmit} className="max-w-2xl mx-auto">
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">
+                  <label htmlFor="name" className="block text-gray-200 font-semibold mb-2">
                     Nom complet *
                   </label>
                   <input
@@ -146,7 +146,7 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
+                  <label htmlFor="email" className="block text-gray-200 font-semibold mb-2">
                     Email *
                   </label>
                   <input
@@ -162,7 +162,7 @@ const Contact = () => {
                 </div>
               </div>
               <div className="mb-6">
-                <label htmlFor="subject" className="block text-gray-700 font-semibold mb-2">
+                <label htmlFor="subject" className="block text-gray-200 font-semibold mb-2">
                   Sujet *
                 </label>
                 <input
@@ -177,7 +177,7 @@ const Contact = () => {
                 />
               </div>
               <div className="mb-6">
-                <label htmlFor="message" className="block text-gray-700 font-semibold mb-2">
+                <label htmlFor="message" className="block text-gray-200 font-semibold mb-2">
                   Message *
                 </label>
                 <textarea
@@ -242,7 +242,7 @@ const Contact = () => {
             <div className="flex gap-4 justify-center flex-wrap">
               <motion.a
                 href="mailto:KaneAbdoulPro1@outlook.com"
-                className="bg-white text-primary px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all"
+                className="bg-dark-gray/50 text-primary px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -260,7 +260,7 @@ const Contact = () => {
                   href="https://github.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white text-primary w-12 h-12 rounded-full flex items-center justify-center hover:bg-gray-100 transition-all"
+                  className="bg-dark-gray/50 text-primary w-12 h-12 rounded-full flex items-center justify-center hover:bg-gray-100 transition-all"
                   whileHover={{ scale: 1.1, rotate: 360 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -270,7 +270,7 @@ const Contact = () => {
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white text-primary w-12 h-12 rounded-full flex items-center justify-center hover:bg-gray-100 transition-all"
+                  className="bg-dark-gray/50 text-primary w-12 h-12 rounded-full flex items-center justify-center hover:bg-gray-100 transition-all"
                   whileHover={{ scale: 1.1, rotate: 360 }}
                   transition={{ duration: 0.3 }}
                 >

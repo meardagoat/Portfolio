@@ -35,7 +35,7 @@ const About = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">À propos de moi</h2>
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+          <p className="text-gray-300 text-lg max-w-3xl mx-auto">
             Passionné par la technologie et l'innovation, je combine mes compétences en business et en développement 
             pour créer des solutions impactantes.
           </p>
@@ -48,12 +48,12 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-2xl font-bold mb-6 text-gray-800">Langues</h3>
+            <h3 className="text-2xl font-bold mb-6 text-white">Langues</h3>
             <div className="space-y-4">
               {languages.map((lang, index) => (
                 <div key={index}>
                   <div className="flex justify-between mb-2">
-                    <span className="font-semibold text-gray-700">{lang.name}</span>
+                    <span className="font-semibold text-gray-200">{lang.name}</span>
                     <span className="text-gray-500">{lang.level}</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-3">
@@ -76,7 +76,7 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-2xl font-bold mb-6 text-gray-800">Récompenses</h3>
+            <h3 className="text-2xl font-bold mb-6 text-white">Récompenses</h3>
             <div className="space-y-4">
               {awards.map((award, index) => (
                 <motion.div
@@ -89,7 +89,7 @@ const About = () => {
                     <span className="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold mr-4">
                       {award.year}
                     </span>
-                    <p className="text-gray-700 font-medium">{award.title}</p>
+                    <p className="text-gray-200 font-medium">{award.title}</p>
                   </div>
                 </motion.div>
               ))}
@@ -103,19 +103,19 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="text-2xl font-bold mb-8 text-center text-gray-800">Centres d'intérêt</h3>
+          <h3 className="text-2xl font-bold mb-8 text-center text-white">Centres d'intérêt</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {interests.map((interest, index) => (
               <motion.div
                 key={index}
-                className="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-shadow"
+                className="bg-dark-gray/50 p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-shadow"
                 whileHover={{ scale: 1.05, y: -5 }}
                 transition={{ duration: 0.3 }}
               >
                 <div className="text-5xl text-primary mb-3 flex justify-center">
                   {interest.icon}
                 </div>
-                <p className="font-semibold text-gray-700">{interest.name}</p>
+                <p className="font-semibold text-gray-200">{interest.name}</p>
               </motion.div>
             ))}
           </div>

@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa';
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 via-white to-purple-50 pt-20">
+    <section className="min-h-screen flex items-center justify-center bg-black pt-20">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <motion.div
@@ -23,7 +23,7 @@ const Hero = () => {
               <span className="gradient-text">Kane Abdoul</span>
             </motion.h1>
             <motion.p
-              className="text-2xl md:text-3xl text-gray-600 mb-6"
+              className="text-2xl md:text-3xl text-gray-300 mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
@@ -64,16 +64,16 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 1 }}
             >
-              <a href="mailto:KaneAbdoulPro1@outlook.com" className="text-3xl text-gray-700 hover:text-primary transition-colors transform hover:scale-110">
+              <a href="mailto:KaneAbdoulPro1@outlook.com" className="text-3xl text-gray-200 hover:text-primary transition-colors transform hover:scale-110">
                 <FaEnvelope />
               </a>
-              <a href="tel:0628601413" className="text-3xl text-gray-700 hover:text-primary transition-colors transform hover:scale-110">
+              <a href="tel:0628601413" className="text-3xl text-gray-200 hover:text-primary transition-colors transform hover:scale-110">
                 <FaPhone />
               </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-3xl text-gray-700 hover:text-primary transition-colors transform hover:scale-110">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-3xl text-gray-200 hover:text-primary transition-colors transform hover:scale-110">
                 <FaGithub />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-3xl text-gray-700 hover:text-primary transition-colors transform hover:scale-110">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-3xl text-gray-200 hover:text-primary transition-colors transform hover:scale-110">
                 <FaLinkedin />
               </a>
             </motion.div>

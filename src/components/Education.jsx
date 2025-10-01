@@ -44,7 +44,7 @@ const Education = () => {
   ];
 
   return (
-    <section id="formation" className="py-20 bg-gradient-to-br from-purple-50 via-white to-indigo-50">
+    <section id="formation" className="py-20 bg-black">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -54,7 +54,7 @@ const Education = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">Formation</h2>
-          <p className="text-gray-600 text-lg">Mon parcours académique et mes diplômes</p>
+          <p className="text-gray-300 text-lg">Mon parcours académique et mes diplômes</p>
         </motion.div>
 
         <div className="max-w-4xl mx-auto">
@@ -68,7 +68,7 @@ const Education = () => {
               className="mb-8"
             >
               <motion.div
-                className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all flex items-start gap-6"
+                className="bg-dark-gray/50 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all flex items-start gap-6"
                 whileHover={{ scale: 1.02 }}
               >
                 <motion.div
@@ -95,9 +95,9 @@ const Education = () => {
                   <span className="inline-block bg-gradient-to-r from-primary to-secondary text-white px-4 py-1 rounded-full text-sm font-semibold mb-3">
                     {edu.year}
                   </span>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-1">{edu.school}</h3>
+                  <h3 className="text-2xl font-bold text-white mb-1">{edu.school}</h3>
                   <h4 className="text-lg font-semibold mb-3" style={{ color: edu.color }}>{edu.degree}</h4>
-                  <p className="text-gray-600">{edu.description}</p>
+                  <p className="text-gray-300">{edu.description}</p>
                 </div>
               </motion.div>
             </motion.div>
