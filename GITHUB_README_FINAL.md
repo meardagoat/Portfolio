@@ -34,12 +34,6 @@ Je suis actuellement étudiant à **EPITECH**, spécialisé en **Business & Tech
 ![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)
 ![Mailchimp](https://img.shields.io/badge/Mailchimp-FFE01B?style=for-the-badge&logo=mailchimp&logoColor=black)
 
-## 🏆 Récompenses
-
-- 🥇 **Meilleur ONG au Sénégal** (2017)
-- 🏀 **Récompense en coaching de basketball** petite catégorie (2016)
-- 📝 **TOEIC** - Score de 895 (2023)
-
 ## 📊 Statistiques GitHub
 
 <div align="center">
