@@ -7,9 +7,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#FF6B9D',     // Rose doux Apple Intelligence
-        secondary: '#5AC8FA',   // Bleu cyan Apple Intelligence
-        accent: '#AF52DE',      // Violet pastel Apple Intelligence
+        primary: '#FF6B35',     // Orange cosmique iPhone 17 Pro
+        secondary: '#0A84FF',   // Bleu Apple
+        accent: '#BF5AF2',      // Violet Apple
+        dark: '#000000',        // Noir Apple
+        'dark-gray': '#1d1d1f', // Gris foncé Apple
       },
     },
   },
