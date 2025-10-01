@@ -1,8 +1,9 @@
 import React from 'react';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { 
   FaReact, FaHtml5, FaCss3Alt, FaJava, FaPython, 
-  FaFigma, FaMailchimp, FaRobot, FaFileWord
+  FaFigma, FaMailchimp, FaRobot, FaFileWord, FaCamera
 } from 'react-icons/fa';
 import { 
   SiAdobecreativecloud, SiNotion,
@@ -27,7 +28,7 @@ const Skills = () => {
       skills: [
         { name: 'Suite Adobe', icon: <SiAdobecreativecloud />, level: 80 },
         { name: 'Figma', icon: <FaFigma />, level: 75 },
-        { name: 'Photographie', icon: <FaHtml5 />, level: 85 },
+        { name: 'Photographie', icon: <FaCamera />, level: 85 },
         { name: 'Prototypage', icon: <FaFigma />, level: 80 },
       ],
     },
