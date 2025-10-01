@@ -97,7 +97,7 @@ const Hero = () => {
                 />
               </motion.div>
               <motion.div
-                className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-br from-primary to-secondary rounded-full"
+                className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-r from-primary via-accent to-secondary rounded-full"
                 animate={{
                   scale: [1, 1.2, 1],
                   rotate: [0, 180, 360],

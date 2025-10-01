@@ -58,7 +58,7 @@ const About = () => {
                   </div>
                   <div className="w-full bg-dark-gray rounded-full h-3">
                     <motion.div
-                      className="bg-gradient-to-r from-primary to-secondary h-3 rounded-full"
+                      className="bg-gradient-to-r from-primary via-accent to-secondary h-3 rounded-full"
                       initial={{ width: 0 }}
                       whileInView={{ width: `${lang.percentage}%` }}
                       viewport={{ once: true }}
@@ -86,7 +86,7 @@ const About = () => {
                   transition={{ duration: 0.2 }}
                 >
                   <div className="flex items-start">
-                    <span className="bg-gradient-to-r from-primary to-secondary text-white px-3 py-1 rounded-full text-sm font-semibold mr-4">
+                    <span className="bg-gradient-to-r from-primary via-accent to-secondary text-white px-3 py-1 rounded-full text-sm font-semibold mr-4">
                       {award.year}
                     </span>
                     <p className="text-white font-medium">{award.title}</p>

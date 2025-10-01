@@ -87,7 +87,7 @@ const Experience = () => {
                     className="bg-dark-gray/50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow"
                     whileHover={{ scale: 1.03 }}
                   >
-                    <span className="inline-block bg-gradient-to-r from-primary to-secondary text-white px-4 py-1 rounded-full text-sm font-semibold mb-3">
+                    <span className="inline-block bg-gradient-to-r from-primary via-accent to-secondary text-white px-4 py-1 rounded-full text-sm font-semibold mb-3">
                       {exp.year}
                     </span>
                     <h3 className="text-xl font-bold text-white mb-2">{exp.title}</h3>

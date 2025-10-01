@@ -92,7 +92,7 @@ const Education = () => {
                   )}
                 </motion.div>
                 <div className="flex-grow">
-                  <span className="inline-block bg-gradient-to-r from-primary to-secondary text-white px-4 py-1 rounded-full text-sm font-semibold mb-3">
+                  <span className="inline-block bg-gradient-to-r from-primary via-accent to-secondary text-white px-4 py-1 rounded-full text-sm font-semibold mb-3">
                     {edu.year}
                   </span>
                   <h3 className="text-2xl font-bold text-white mb-1">{edu.school}</h3>
