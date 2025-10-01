@@ -37,7 +37,7 @@ const Skills = () => {
       skills: [
         { name: 'Suite Office', icon: <FaFileWord />, level: 90, color: '#185ABD' },
         { name: 'Mailchimp', icon: <FaMailchimp />, level: 75, color: '#FFE01B' },
-        { name: 'Notion', icon: <SiNotion />, level: 85, color: '#000000' },
+        { name: 'Notion', icon: <SiNotion />, level: 85, color: '#FFFFFF' },
         { name: 'ERP/CMS', icon: <MdWork />, level: 70, color: '#6366f1' },
       ],
     },
