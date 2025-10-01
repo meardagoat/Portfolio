@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#6366f1',
-        secondary: '#8b5cf6',
+        primary: '#FF69B4',     // Rose vif du logo A.KANE
+        secondary: '#87CEEB',   // Bleu clair du logo A.KANE
       },
     },
   },
