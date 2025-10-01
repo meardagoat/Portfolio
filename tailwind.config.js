@@ -7,8 +7,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#FF69B4',     // Rose vif du logo A.KANE
-        secondary: '#87CEEB',   // Bleu clair du logo A.KANE
+        primary: '#FF6B9D',     // Rose doux Apple Intelligence
+        secondary: '#5AC8FA',   // Bleu cyan Apple Intelligence
+        accent: '#AF52DE',      // Violet pastel Apple Intelligence
       },
     },
   },
