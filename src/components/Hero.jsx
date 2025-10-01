@@ -96,18 +96,36 @@ const Hero = () => {
                   className="w-full h-full object-cover"
                 />
               </motion.div>
+              {/* Badge Dev Animé */}
               <motion.div
-                className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-r from-primary via-accent to-secondary rounded-full"
+                className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-r from-primary via-accent to-secondary rounded-2xl flex items-center justify-center shadow-2xl"
                 animate={{
-                  scale: [1, 1.2, 1],
-                  rotate: [0, 180, 360],
+                  y: [0, -10, 0],
+                  rotate: [-5, 5, -5],
                 }}
                 transition={{
                   duration: 3,
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-              />
+                style={{
+                  boxShadow: '0 0 40px rgba(255,107,53,0.5), 0 0 80px rgba(191,90,242,0.3)',
+                }}
+              >
+                <motion.div
+                  className="text-white text-5xl font-bold"
+                  animate={{
+                    scale: [1, 1.1, 1],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                >
+                  &lt;/&gt;
+                </motion.div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
