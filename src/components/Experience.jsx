@@ -1,6 +1,7 @@
 import React from 'react';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-import { FaBriefcase } from 'react-icons/fa';
+import { FaBiking, FaHotel, FaBox, FaUtensils, FaShoppingCart } from 'react-icons/fa';
 
 const Experience = () => {
   const experiences = [
@@ -9,30 +10,40 @@ const Experience = () => {
       title: 'Stage chez GAYA Bike',
       role: 'Assistant E-commerce et digital',
       description: 'Gestion des opérations e-commerce et marketing digital pour une entreprise innovante dans le secteur du vélo.',
+      icon: <FaBiking />,
+      color: '#10B981',
     },
     {
       year: '2023-2024',
       title: 'B&B Hotel Paris Malakoff',
       role: 'Réceptionniste polyvalent',
       description: 'Accueil et service client, gestion des réservations, coordination avec les différents services de l\'hôtel.',
+      icon: <FaHotel />,
+      color: '#F59E0B',
     },
     {
       year: '2022-2023',
       title: 'DPL International',
       role: 'Employé échelon 1',
       description: 'Qualité, préparateur de commande et gestion d\'inventaire dans un environnement international.',
+      icon: <FaBox />,
+      color: '#3B82F6',
     },
     {
       year: '2021-2022',
       title: 'MIAM REPUBLIQUE',
       role: 'Community Manager',
       description: 'Gestion des réseaux sociaux, création de campagnes marketing, co-réalisation des dossiers de partenariats, et création de supports de communication.',
+      icon: <FaUtensils />,
+      color: '#EF4444',
     },
     {
       year: '2020-2021',
       title: 'EUROLIBRE SERVICES',
       role: 'Stagiaire',
       description: 'Étiquetage, mise en rayon de produits et vérification DLU et DDM.',
+      icon: <FaShoppingCart />,
+      color: '#8B5CF6',
     },
   ];
 
@@ -82,11 +93,15 @@ const Experience = () => {
 
                 <div className="w-full md:w-2/12 flex justify-center my-4 md:my-0 relative z-10">
                   <motion.div
-                    className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white shadow-lg"
+                    className="w-16 h-16 rounded-full flex items-center justify-center text-white shadow-lg"
+                    style={{ 
+                      backgroundColor: exp.color,
+                      boxShadow: `0 4px 14px ${exp.color}40`
+                    }}
                     whileHover={{ scale: 1.2, rotate: 360 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <FaBriefcase className="text-xl" />
+                    <span className="text-2xl">{exp.icon}</span>
                   </motion.div>
                 </div>
 
@@ -101,4 +116,3 @@ const Experience = () => {
 };
 
 export default Experience;
-
