@@ -2,12 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   FaReact, FaHtml5, FaCss3Alt, FaJava, FaPython, 
-  FaFigma, FaMailchimp, FaRobot 
+  FaFigma, FaMailchimp, FaRobot, FaFileWord
 } from 'react-icons/fa';
 import { 
-  SiAdobecreativecloud, SiMicrosoftoffice, SiNotion,
+  SiAdobecreativecloud, SiNotion,
   SiJavascript, SiTailwindcss
 } from 'react-icons/si';
+import { MdWork } from 'react-icons/md';
 
 const Skills = () => {
   const skillCategories = [
@@ -33,10 +34,10 @@ const Skills = () => {
     {
       title: 'Outils & Productivité',
       skills: [
-        { name: 'Suite Office', icon: <SiMicrosoftoffice />, level: 90 },
+        { name: 'Suite Office', icon: <FaFileWord />, level: 90 },
         { name: 'Mailchimp', icon: <FaMailchimp />, level: 75 },
         { name: 'Notion', icon: <SiNotion />, level: 85 },
-        { name: 'ERP/CMS', icon: <SiMicrosoftoffice />, level: 70 },
+        { name: 'ERP/CMS', icon: <MdWork />, level: 70 },
       ],
     },
     {
