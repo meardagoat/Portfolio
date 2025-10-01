@@ -12,7 +12,7 @@ const Experience = () => {
       description: 'Gestion des opérations e-commerce et marketing digital pour une entreprise innovante dans le secteur du vélo.',
       icon: <FaBiking />,
       color: '#10B981',
-      logo: null, // Pas de logo trouvé, utiliser l'icône
+      logo: '/logos/gayabike.png',
     },
     {
       year: '2023-2024',
@@ -30,7 +30,7 @@ const Experience = () => {
       description: 'Qualité, préparateur de commande et gestion d\'inventaire dans un environnement international.',
       icon: <FaBox />,
       color: '#3B82F6',
-      logo: null,
+      logo: '/logos/dpl.png',
     },
     {
       year: '2021-2022',
@@ -39,7 +39,7 @@ const Experience = () => {
       description: 'Gestion des réseaux sociaux, création de campagnes marketing, co-réalisation des dossiers de partenariats, et création de supports de communication.',
       icon: <FaUtensils />,
       color: '#EF4444',
-      logo: null,
+      logo: '/logos/miam.png',
     },
     {
       year: '2020-2021',

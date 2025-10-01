@@ -21,7 +21,7 @@ const Education = () => {
       description: 'Formation en gestion commerciale et management dans le secteur agro-alimentaire.',
       icon: <FaBusinessTime />,
       color: '#10B981',
-      logo: null,
+      logo: '/logos/isema.png',
     },
     {
       year: '2018-2020',
@@ -30,7 +30,7 @@ const Education = () => {
       description: 'Fondamentaux du business et de l\'industrie agro-alimentaire.',
       icon: <FaSeedling />,
       color: '#F59E0B',
-      logo: null,
+      logo: '/logos/bem.png',
     },
     {
       year: '2017-2018',
