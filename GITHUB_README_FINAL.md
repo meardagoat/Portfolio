@@ -66,12 +66,12 @@ Je suis actuellement étudiant à **EPITECH**, spécialisé en **Business & Tech
 ## 📊 Statistiques GitHub
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=votre-username&show_icons=true&theme=tokyonight&hide_border=true&bg_color=1A1B27&title_color=6366F1&icon_color=8B5CF6" alt="GitHub Stats" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=votre-username&theme=tokyonight&hide_border=true&background=1A1B27&ring=6366F1&fire=8B5CF6&currStreakLabel=8B5CF6" alt="GitHub Streak" />
+  <img src="https://github-readme-stats.vercel.app/api?username=meardagoat&show_icons=true&theme=tokyonight&hide_border=true&bg_color=1A1B27&title_color=6366F1&icon_color=8B5CF6" alt="GitHub Stats" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=meardagoat&theme=tokyonight&hide_border=true&background=1A1B27&ring=6366F1&fire=8B5CF6&currStreakLabel=8B5CF6" alt="GitHub Streak" />
 </div>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=votre-username&layout=compact&theme=tokyonight&hide_border=true&bg_color=1A1B27&title_color=6366F1" alt="Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=meardagoat&layout=compact&theme=tokyonight&hide_border=true&bg_color=1A1B27&title_color=6366F1" alt="Top Languages" />
 </div>
 
 ## 🎨 Centres d'intérêt
@@ -87,7 +87,7 @@ Je suis actuellement étudiant à **EPITECH**, spécialisé en **Business & Tech
   
 [![Email](https://img.shields.io/badge/Email-KaneAbdoulPro1%40outlook.com-6366F1?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:KaneAbdoulPro1@outlook.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visitez-6366F1?style=for-the-badge&logo=google-chrome&logoColor=white)](https://votre-portfolio.com)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visitez-6366F1?style=for-the-badge&logo=google-chrome&logoColor=white)](https://portfolio-kane-abdoul.vercel.app)
 [![Phone](https://img.shields.io/badge/T%C3%A9l%C3%A9phone-06.28.60.14.13-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](tel:0628601413)
 
 </div>
@@ -99,7 +99,7 @@ Je suis actuellement étudiant à **EPITECH**, spécialisé en **Business & Tech
 ---
 
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=votre-username&color=6366f1&style=for-the-badge&label=PROFILE+VIEWS" alt="Profile Views" />
+  <img src="https://komarev.com/ghpvc/?username=meardagoat&color=6366f1&style=for-the-badge&label=PROFILE+VIEWS" alt="Profile Views" />
 </div>
 
 <div align="center">
