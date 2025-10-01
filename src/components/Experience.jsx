@@ -12,6 +12,7 @@ const Experience = () => {
       description: 'Gestion des opérations e-commerce et marketing digital pour une entreprise innovante dans le secteur du vélo.',
       icon: <FaBiking />,
       color: '#10B981',
+      logo: null, // Pas de logo trouvé, utiliser l'icône
     },
     {
       year: '2023-2024',
@@ -20,6 +21,7 @@ const Experience = () => {
       description: 'Accueil et service client, gestion des réservations, coordination avec les différents services de l\'hôtel.',
       icon: <FaHotel />,
       color: '#F59E0B',
+      logo: '/logos/bbhotel.png',
     },
     {
       year: '2022-2023',
@@ -28,6 +30,7 @@ const Experience = () => {
       description: 'Qualité, préparateur de commande et gestion d\'inventaire dans un environnement international.',
       icon: <FaBox />,
       color: '#3B82F6',
+      logo: null,
     },
     {
       year: '2021-2022',
@@ -36,6 +39,7 @@ const Experience = () => {
       description: 'Gestion des réseaux sociaux, création de campagnes marketing, co-réalisation des dossiers de partenariats, et création de supports de communication.',
       icon: <FaUtensils />,
       color: '#EF4444',
+      logo: null,
     },
     {
       year: '2020-2021',
@@ -44,6 +48,7 @@ const Experience = () => {
       description: 'Étiquetage, mise en rayon de produits et vérification DLU et DDM.',
       icon: <FaShoppingCart />,
       color: '#8B5CF6',
+      logo: null,
     },
   ];
 
@@ -93,15 +98,24 @@ const Experience = () => {
 
                 <div className="w-full md:w-2/12 flex justify-center my-4 md:my-0 relative z-10">
                   <motion.div
-                    className="w-16 h-16 rounded-full flex items-center justify-center text-white shadow-lg"
+                    className="w-16 h-16 rounded-full flex items-center justify-center shadow-lg overflow-hidden"
                     style={{ 
-                      backgroundColor: exp.color,
-                      boxShadow: `0 4px 14px ${exp.color}40`
+                      backgroundColor: exp.logo ? '#ffffff' : exp.color,
+                      boxShadow: `0 4px 14px ${exp.color}40`,
+                      border: exp.logo ? '2px solid #e5e7eb' : 'none'
                     }}
-                    whileHover={{ scale: 1.2, rotate: 360 }}
+                    whileHover={{ scale: 1.2, rotate: exp.logo ? 0 : 360 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <span className="text-2xl">{exp.icon}</span>
+                    {exp.logo ? (
+                      <img 
+                        src={exp.logo} 
+                        alt={`Logo ${exp.title}`}
+                        className="w-12 h-12 object-contain p-1"
+                      />
+                    ) : (
+                      <span className="text-2xl text-white">{exp.icon}</span>
+                    )}
                   </motion.div>
                 </div>
 

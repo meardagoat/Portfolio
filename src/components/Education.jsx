@@ -12,6 +12,7 @@ const Education = () => {
       description: 'Formation complète en gestion de projet technologique, développement informatique et management.',
       icon: <FaLaptopCode />,
       color: '#6366f1',
+      logo: '/logos/epitech.png',
     },
     {
       year: '2020-2022',
@@ -20,6 +21,7 @@ const Education = () => {
       description: 'Formation en gestion commerciale et management dans le secteur agro-alimentaire.',
       icon: <FaBusinessTime />,
       color: '#10B981',
+      logo: null,
     },
     {
       year: '2018-2020',
@@ -28,6 +30,7 @@ const Education = () => {
       description: 'Fondamentaux du business et de l\'industrie agro-alimentaire.',
       icon: <FaSeedling />,
       color: '#F59E0B',
+      logo: null,
     },
     {
       year: '2017-2018',
@@ -36,6 +39,7 @@ const Education = () => {
       description: 'Formation générale avec spécialisation en sciences humaines.',
       icon: <FaBook />,
       color: '#8B5CF6',
+      logo: null,
     },
   ];
 
@@ -68,15 +72,24 @@ const Education = () => {
                 whileHover={{ scale: 1.02 }}
               >
                 <motion.div
-                  className="flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center text-white shadow-lg"
+                  className="flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center shadow-lg overflow-hidden"
                   style={{ 
-                    backgroundColor: edu.color,
-                    boxShadow: `0 4px 14px ${edu.color}40`
+                    backgroundColor: edu.logo ? '#ffffff' : edu.color,
+                    boxShadow: `0 4px 14px ${edu.color}40`,
+                    border: edu.logo ? '2px solid #e5e7eb' : 'none'
                   }}
-                  whileHover={{ rotate: 360, scale: 1.1 }}
+                  whileHover={{ rotate: edu.logo ? 0 : 360, scale: 1.1 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <span className="text-2xl">{edu.icon}</span>
+                  {edu.logo ? (
+                    <img 
+                      src={edu.logo} 
+                      alt={`Logo ${edu.school}`}
+                      className="w-14 h-14 object-contain p-1"
+                    />
+                  ) : (
+                    <span className="text-2xl text-white">{edu.icon}</span>
+                  )}
                 </motion.div>
                 <div className="flex-grow">
                   <span className="inline-block bg-gradient-to-r from-primary to-secondary text-white px-4 py-1 rounded-full text-sm font-semibold mb-3">
