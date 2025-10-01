@@ -91,7 +91,7 @@ const Hero = () => {
                 transition={{ duration: 0.3 }}
               >
                 <img
-                  src="/images/profile.jpg"
+                  src="/images/profile.jpeg"
                   alt="Kane Abdoul"
                   className="w-full h-full object-cover"
                 />

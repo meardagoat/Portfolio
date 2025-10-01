@@ -112,7 +112,7 @@ const About = () => {
                 whileHover={{ scale: 1.05, y: -5 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="text-5xl gradient-text mb-3 flex justify-center">
+                <div className="text-5xl text-primary mb-3 flex justify-center">
                   {interest.icon}
                 </div>
                 <p className="font-semibold text-gray-700">{interest.name}</p>
