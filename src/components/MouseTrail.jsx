@@ -1,54 +1,67 @@
 import { useEffect, useState } from 'react';
 
 const MouseTrail = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isMoving, setIsMoving] = useState(false);
+  const [stars, setStars] = useState([]);
 
   useEffect(() => {
-    let timeout;
-
     const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-      setIsMoving(true);
+      const newStar = {
+        id: Date.now() + Math.random(),
+        x: e.clientX,
+        y: e.clientY,
+        size: Math.random() * 3 + 1,
+        color: ['#FF6B35', '#0A84FF', '#BF5AF2'][Math.floor(Math.random() * 3)],
+        velocity: {
+          x: (Math.random() - 0.5) * 2,
+          y: (Math.random() - 0.5) * 2,
+        },
+      };
 
-      clearTimeout(timeout);
-      timeout = setTimeout(() => {
-        setIsMoving(false);
-      }, 100);
+      setStars((prevStars) => [...prevStars, newStar].slice(-30)); // Garder seulement les 30 dernières étoiles
     };
 
     window.addEventListener('mousemove', handleMouseMove);
 
+    // Animation des étoiles
+    const interval = setInterval(() => {
+      setStars((prevStars) =>
+        prevStars
+          .map((star) => ({
+            ...star,
+            x: star.x + star.velocity.x,
+            y: star.y + star.velocity.y,
+            size: star.size * 0.95, // Réduction progressive
+          }))
+          .filter((star) => star.size > 0.1) // Supprimer les étoiles trop petites
+      );
+    }, 50);
+
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
-      clearTimeout(timeout);
+      clearInterval(interval);
     };
   }, []);
 
   return (
     <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
-      {/* Traînée lumineuse qui suit la souris */}
-      <div
-        className="absolute transition-opacity duration-300"
-        style={{
-          left: `${mousePosition.x}px`,
-          top: `${mousePosition.y}px`,
-          transform: 'translate(-50%, -50%)',
-          opacity: isMoving ? 0.4 : 0,
-        }}
-      >
-        {/* Gradient radial multicolore */}
+      {stars.map((star) => (
         <div
-          className="w-96 h-96 rounded-full"
+          key={star.id}
+          className="absolute rounded-full transition-all duration-100"
           style={{
-            background: 'radial-gradient(circle, rgba(255,107,53,0.3) 0%, rgba(10,132,255,0.2) 30%, rgba(191,90,242,0.15) 60%, transparent 80%)',
-            filter: 'blur(50px)',
+            left: `${star.x}px`,
+            top: `${star.y}px`,
+            width: `${star.size}px`,
+            height: `${star.size}px`,
+            backgroundColor: star.color,
+            boxShadow: `0 0 ${star.size * 4}px ${star.color}`,
+            transform: 'translate(-50%, -50%)',
+            opacity: star.size / 4,
           }}
         />
-      </div>
+      ))}
     </div>
   );
 };
 
 export default MouseTrail;
-

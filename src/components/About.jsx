@@ -48,7 +48,7 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-2xl font-bold mb-6 text-white">Langues</h3>
+            <h3 className="text-2xl font-bold mb-6 gradient-text">Langues</h3>
             <div className="space-y-4">
               {languages.map((lang, index) => (
                 <div key={index}>
@@ -76,20 +76,20 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-2xl font-bold mb-6 text-white">Récompenses</h3>
+            <h3 className="text-2xl font-bold mb-6 gradient-text">Récompenses</h3>
             <div className="space-y-4">
               {awards.map((award, index) => (
                 <motion.div
                   key={index}
-                  className="bg-gradient-to-r from-indigo-50 to-purple-50 p-4 rounded-lg"
+                  className="bg-dark-gray/30 backdrop-blur-lg border border-white/10 p-4 rounded-lg hover:border-white/20"
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.2 }}
                 >
                   <div className="flex items-start">
-                    <span className="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold mr-4">
+                    <span className="bg-gradient-to-r from-primary to-secondary text-white px-3 py-1 rounded-full text-sm font-semibold mr-4">
                       {award.year}
                     </span>
-                    <p className="text-gray-200 font-medium">{award.title}</p>
+                    <p className="text-white font-medium">{award.title}</p>
                   </div>
                 </motion.div>
               ))}
@@ -103,7 +103,7 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="text-2xl font-bold mb-8 text-center text-white">Centres d'intérêt</h3>
+          <h3 className="text-2xl font-bold mb-8 text-center gradient-text">Centres d'intérêt</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {interests.map((interest, index) => (
               <motion.div
