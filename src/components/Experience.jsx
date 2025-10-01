@@ -52,7 +52,7 @@ const Experience = () => {
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-primary to-secondary"></div>
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-primary to-secondary z-0"></div>
 
           <div className="space-y-12">
             {experiences.map((exp, index) => (
@@ -80,7 +80,7 @@ const Experience = () => {
                   </motion.div>
                 </div>
 
-                <div className="w-full md:w-2/12 flex justify-center my-4 md:my-0">
+                <div className="w-full md:w-2/12 flex justify-center my-4 md:my-0 relative z-10">
                   <motion.div
                     className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white shadow-lg"
                     whileHover={{ scale: 1.2, rotate: 360 }}
