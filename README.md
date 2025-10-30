@@ -104,7 +104,7 @@ Pour personnaliser le portfolio:
 
 - Email: [KaneAbdoulPro1@outlook.com](mailto:KaneAbdoulPro1@outlook.com)
 - Téléphone: 06.28.60.14.13
-- Adresse: 2 Rue Jean Anouilh, 78420, Carrière Sur Seine
+- Adresse: 78420, Carrière Sur Seine
 
 ---
 
