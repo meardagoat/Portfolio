@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaExternalLinkAlt, FaGithub, FaCode, FaPalette, FaRocket } from 'react-icons/fa';
 import { SiReact, SiTailwindcss, SiVercel, SiFramer } from 'react-icons/si';
+import moodFlowBanner from '../assets/Mood_flow.jpg';
 
 const Projects = () => {
   const projects = [
@@ -9,7 +10,7 @@ const Projects = () => {
       title: 'Mood Flow Corporate Wellness',
       description: 'Plateforme de bien-être en entreprise conçue pour améliorer la santé mentale et physique des employés. Application web moderne avec une interface intuitive et des fonctionnalités interactives.',
       longDescription: 'Une solution complète de bien-être corporate permettant aux entreprises de prendre soin de leurs employés grâce à des outils de suivi, des programmes personnalisés et une interface utilisateur optimale.',
-      image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&auto=format&fit=crop',
+      image: moodFlowBanner,
       liveUrl: 'https://mood-flow-corporate-wellness.vercel.app/',
       githubUrl: null,
       technologies: [
