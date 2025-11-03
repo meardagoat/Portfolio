@@ -53,7 +53,7 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-black">
+    <section id="experience" className="py-20 bg-gradient-to-br from-black via-dark-gray to-black">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

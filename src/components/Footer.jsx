@@ -4,7 +4,7 @@ import { FaHeart } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-8">
+    <footer className="bg-gradient-to-br from-black via-dark-gray to-black text-white py-8">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
