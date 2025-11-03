@@ -1,41 +1,38 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import SplineScene from '../components/SplineScene';
-import { FaMusic, FaPalette, FaRocket, FaArrowRight, FaArrowLeft } from 'react-icons/fa';
+import { FaMusic, FaPalette, FaRocket, FaArrowRight, FaArrowLeft, FaBolt } from 'react-icons/fa';
 
 const Aurora = () => {
+  const [activeTab, setActiveTab] = useState(0);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
   const features = [
     {
       icon: <FaMusic />,
       title: 'Flow State Music',
-      description: 'Plongez dans un état de concentration maximale avec notre sélection musicale',
+      description: 'Plongez dans un état de concentration maximale avec notre sélection musicale immersive',
       gradient: 'from-purple-500 via-pink-500 to-orange-500',
     },
     {
       icon: <FaPalette />,
       title: 'Creative Focus',
-      description: 'Libérez votre créativité avec des environnements visuels inspirants',
+      description: 'Libérez votre créativité avec des environnements visuels dynamiques et inspirants',
       gradient: 'from-blue-500 via-purple-500 to-pink-500',
     },
     {
       icon: <FaRocket />,
       title: 'Productivity Boost',
-      description: 'Atteignez des niveaux de productivité exceptionnels en mode flow',
+      description: 'Atteignez des niveaux de productivité exceptionnels en mode flow continu',
       gradient: 'from-cyan-500 via-blue-500 to-purple-500',
     },
   ];
 
-  // Animated gradient background
-  const gradientAnimation = {
-    background: 'linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #533483)',
-    backgroundSize: '400% 400%',
-    animation: 'gradient-shift 15s ease infinite',
-  };
-
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden relative">
-      {/* Back to Portfolio Button */}
+      {/* Back Button */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -43,171 +40,294 @@ const Aurora = () => {
       >
         <Link
           to="/"
-          className="px-6 py-3 rounded-full bg-white/10 backdrop-blur-xl border border-purple-500/30 text-white font-semibold flex items-center gap-2 hover:bg-white/20 transition-all"
+          className="px-6 py-3 rounded-full bg-white/10 backdrop-blur-xl border border-purple-500/30 text-white font-semibold flex items-center gap-2 hover:bg-purple-500/20 transition-all"
         >
           <FaArrowLeft />
-          Retour au portfolio
+          Retour
         </Link>
       </motion.div>
-      {/* Animated gradient background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+
+      {/* Dynamic animated background */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <motion.div
           className="absolute inset-0"
           animate={{
             backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
           }}
           transition={{
-            duration: 15,
+            duration: 20,
             repeat: Infinity,
             ease: 'linear',
           }}
           style={{
-            background: 'linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #533483, #1a1a2e)',
+            background: 'linear-gradient(-45deg, #0a0a0f, #1a0a2e, #16213e, #0f3460, #533483, #0a0a0f)',
             backgroundSize: '400% 400%',
           }}
         />
-        {/* Glowing orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/30 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 right-1/3 w-72 h-72 bg-pink-500/20 rounded-full blur-3xl animate-pulse delay-2000"></div>
+        {/* Energetic glowing orbs */}
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute rounded-full"
+            style={{
+              width: `${150 + i * 80}px`,
+              height: `${150 + i * 80}px`,
+              left: `${15 + i * 15}%`,
+              top: `${10 + (i % 2) * 50}%`,
+              background: `radial-gradient(circle, ${
+                i % 3 === 0 ? 'rgba(168, 85, 247, 0.4)' : i % 3 === 1 ? 'rgba(236, 72, 153, 0.4)' : 'rgba(6, 182, 212, 0.4)'
+              }, transparent)`,
+            }}
+            animate={{
+              x: [0, 100, -100, 0],
+              y: [0, -100, 100, 0],
+              scale: [1, 1.3, 0.7, 1],
+              opacity: [0.3, 0.7, 0.3],
+            }}
+            transition={{
+              duration: 8 + i * 2,
+              repeat: Infinity,
+              ease: 'easeInOut',
+              delay: i * 1.5,
+            }}
+          />
+        ))}
+        {/* Geometric grid overlay */}
+        <div 
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage: 'linear-gradient(rgba(168, 85, 247, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(168, 85, 247, 0.1) 1px, transparent 1px)',
+            backgroundSize: '50px 50px',
+          }}
+        />
       </div>
 
-      {/* Hero Section */}
-      <section className="relative z-10 min-h-screen flex flex-col items-center justify-center px-6 py-20">
+      {/* Hero Section - Dynamic split screen */}
+      <section className="relative z-10 min-h-screen flex items-center px-6 py-20">
         <div className="container mx-auto max-w-7xl">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Left: Text Content */}
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left: Dynamic text */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="space-y-8"
+              className="space-y-10"
             >
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                <span className="inline-block px-4 py-2 rounded-full bg-purple-500/20 border border-purple-400/30 text-purple-300 text-sm font-semibold mb-4">
+                <span className="inline-block px-5 py-2 rounded-full bg-purple-500/20 border border-purple-400/40 text-purple-300 text-sm font-semibold backdrop-blur-sm flex items-center gap-2">
+                  <FaBolt className="animate-pulse" />
                   Creative Focus Tool
                 </span>
               </motion.div>
               
-              <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-                <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
+              <h1 className="text-6xl md:text-8xl font-black leading-[0.9]">
+                <motion.span
+                  className="block bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent"
+                  animate={{ 
+                    backgroundPosition: ['0%', '100%', '0%'],
+                  }}
+                  transition={{ duration: 5, repeat: Infinity }}
+                  style={{
+                    backgroundImage: 'linear-gradient(90deg, #a855f7, #ec4899, #06b6d4, #a855f7)',
+                    backgroundSize: '200% 100%',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                  }}
+                >
                   Aurora
-                </span>
-                <br />
-                <span className="text-white">Enter Your</span>
-                <br />
-                <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+                </motion.span>
+                <span className="block text-white">Enter Your</span>
+                <motion.span
+                  className="block bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent"
+                  animate={{ 
+                    filter: ['blur(0px)', 'blur(2px)', 'blur(0px)'],
+                  }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
                   Flow State
-                </span>
+                </motion.span>
               </h1>
 
-              <p className="text-xl text-gray-300 leading-relaxed max-w-xl">
-                Une expérience immersive pour libérer votre créativité et atteindre un état de flow optimal. 
-                Combinez musique, visualisation 3D et focus pour des sessions productives exceptionnelles.
-              </p>
+              <motion.p
+                className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-xl"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+              >
+                Une expérience immersive pour libérer votre créativité. Combinez musique, visualisation 3D et focus pour des sessions productives exceptionnelles.
+              </motion.p>
 
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 }}
+                className="flex flex-wrap gap-4"
+              >
+                <motion.button
+                  className="px-8 py-4 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 text-white font-bold text-lg flex items-center gap-2 hover:shadow-2xl hover:shadow-purple-500/50 transition-all"
+                  whileHover={{ scale: 1.05, rotate: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Enter flow state
+                  <FaArrowRight />
+                </motion.button>
+                <motion.button
+                  className="px-8 py-4 rounded-full border-2 border-purple-400/50 text-purple-300 font-semibold hover:bg-purple-500/20 transition-all"
+                  whileHover={{ scale: 1.05, rotate: 2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Watch demo
+                </motion.button>
+              </motion.div>
+            </motion.div>
+
+            {/* Right: 3D Scene with energetic effects */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5, rotate: 20 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{ duration: 1, delay: 0.5 }}
+              className="relative"
+            >
+              <div className="relative h-[500px] lg:h-[600px] rounded-2xl overflow-hidden border-2 border-purple-500/40 backdrop-blur-xl">
+                <SplineScene 
+                  sceneUrl={null}
+                  theme="aurora"
+                  fallbackGradient="from-purple-600 via-pink-600 to-cyan-600"
+                />
+                {/* Energetic border glow */}
+                <motion.div
+                  className="absolute inset-0 border-2 border-purple-500/30 rounded-2xl pointer-events-none"
+                  animate={{
+                    boxShadow: [
+                      '0 0 30px rgba(168, 85, 247, 0.3)',
+                      '0 0 60px rgba(236, 72, 153, 0.4)',
+                      '0 0 30px rgba(6, 182, 212, 0.3)',
+                      '0 0 30px rgba(168, 85, 247, 0.3)',
+                    ],
+                  }}
+                  transition={{ duration: 4, repeat: Infinity }}
+                />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section - Tabbed interface */}
+      <section className="relative z-10 py-32 px-6">
+        <div className="container mx-auto max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-5xl md:text-7xl font-black mb-6">
+              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
+                Libérez
+              </span>
+              <span className="text-white block">votre créativité</span>
+            </h2>
+          </motion.div>
+
+          {/* Tab Navigation */}
+          <div className="flex justify-center gap-4 mb-12 flex-wrap">
+            {features.map((feature, index) => (
               <motion.button
-                className="px-8 py-4 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 text-white font-semibold text-lg flex items-center gap-2 hover:shadow-2xl hover:shadow-purple-500/50 transition-all"
+                key={index}
+                onClick={() => setActiveTab(index)}
+                className={`px-6 py-3 rounded-full font-semibold transition-all ${
+                  activeTab === index
+                    ? 'bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 text-white shadow-lg'
+                    : 'bg-white/5 border border-purple-500/30 text-gray-300 hover:border-purple-400/50'
+                }`}
                 whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {feature.title}
+              </motion.button>
+            ))}
+          </div>
+
+          {/* Active Feature Display */}
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-cyan-500/10 backdrop-blur-xl border-2 border-purple-500/30 rounded-3xl p-12"
+          >
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <motion.div
+                  className={`w-24 h-24 rounded-2xl bg-gradient-to-r ${features[activeTab].gradient} flex items-center justify-center mb-8 text-4xl text-white shadow-2xl`}
+                  animate={{ rotate: [0, 360] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
+                >
+                  {features[activeTab].icon}
+                </motion.div>
+                <h3 className="text-4xl font-black mb-6 text-white">{features[activeTab].title}</h3>
+                <p className="text-xl text-gray-300 leading-relaxed">{features[activeTab].description}</p>
+              </div>
+              <div className="h-64 bg-black/30 rounded-2xl border border-purple-500/20"></div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA Section - Energetic design */}
+      <section className="relative z-10 py-32 px-6">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative"
+          >
+            {/* Animated border */}
+            <motion.div
+              className="absolute inset-0 rounded-3xl"
+              style={{
+                background: 'linear-gradient(45deg, #a855f7, #ec4899, #06b6d4, #a855f7)',
+                backgroundSize: '200% 200%',
+              }}
+              animate={{
+                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+              }}
+              transition={{ duration: 5, repeat: Infinity, ease: 'linear' }}
+            />
+            <div className="relative bg-black/80 backdrop-blur-2xl border-2 border-purple-500/40 rounded-3xl p-16 text-center">
+              <motion.h2
+                className="text-5xl md:text-7xl font-black mb-8"
+                animate={{
+                  backgroundPosition: ['0%', '100%', '0%'],
+                }}
+                transition={{ duration: 5, repeat: Infinity }}
+                style={{
+                  backgroundImage: 'linear-gradient(90deg, #a855f7, #ec4899, #06b6d4, #a855f7)',
+                  backgroundSize: '200% 100%',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}
+              >
+                Prêt à entrer dans le flow ?
+              </motion.h2>
+              <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Découvrez un nouveau niveau de créativité et de productivité avec Aurora.
+              </p>
+              <motion.button
+                className="px-12 py-5 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 text-white font-black text-xl flex items-center gap-3 mx-auto hover:shadow-2xl hover:shadow-purple-500/50 transition-all"
+                whileHover={{ scale: 1.1, rotate: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Enter your flow state
                 <FaArrowRight />
               </motion.button>
-            </motion.div>
-
-            {/* Right: Spline 3D Scene */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.3 }}
-              className="relative h-[500px] md:h-[600px] rounded-2xl overflow-hidden border border-purple-500/30 backdrop-blur-xl bg-gradient-to-br from-purple-500/10 to-cyan-500/10"
-            >
-              <SplineScene 
-                sceneUrl={null}
-                theme="aurora"
-                fallbackGradient="from-purple-600 via-pink-600 to-cyan-600"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none"></div>
-              {/* Glowing border effect */}
-              <div className="absolute inset-0 border-2 border-purple-500/20 rounded-2xl pointer-events-none animate-pulse"></div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="relative z-10 py-20 px-6">
-        <div className="container mx-auto max-w-6xl">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-                Libérez votre créativité
-              </span>
-            </h2>
-            <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-              Des outils conçus pour vous propulser dans un état de flow optimal
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="bg-white/5 backdrop-blur-xl border border-purple-500/20 rounded-2xl p-8 hover:border-purple-400/40 transition-all group"
-                whileHover={{ scale: 1.05, y: -10 }}
-              >
-                <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${feature.gradient} flex items-center justify-center mb-6 text-2xl text-white shadow-lg group-hover:shadow-xl group-hover:shadow-purple-500/50 transition-all`}>
-                  {feature.icon}
-                </div>
-                <h3 className="text-2xl font-bold mb-4 text-white">{feature.title}</h3>
-                <p className="text-gray-300 leading-relaxed">{feature.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="relative z-10 py-20 px-6">
-        <div className="container mx-auto max-w-4xl text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-cyan-500/20 backdrop-blur-xl border border-purple-500/30 rounded-3xl p-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-                Prêt à entrer dans le flow ?
-              </span>
-            </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Découvrez un nouveau niveau de créativité et de productivité avec Aurora.
-            </p>
-            <motion.button
-              className="px-10 py-5 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 text-white font-bold text-xl flex items-center gap-3 mx-auto hover:shadow-2xl hover:shadow-purple-500/50 transition-all"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Enter your flow state
-              <FaArrowRight />
-            </motion.button>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -216,4 +336,3 @@ const Aurora = () => {
 };
 
 export default Aurora;
-
