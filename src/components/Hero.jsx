@@ -20,7 +20,7 @@ const Hero = () => {
               transition={{ delay: 0.2 }}
             >
               Bonjour, je suis{' '}
-              <span className="gradient-text">Kane Abdoul</span>
+              <span className="gradient-text text-glow">Kane Abdoul</span>
             </motion.h1>
             <motion.p
               className="text-2xl md:text-3xl text-gray-300 mb-6"
@@ -47,13 +47,13 @@ const Hero = () => {
             >
               <a
                 href="mailto:KaneAbdoulPro1@outlook.com"
-                className="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-secondary transition-all transform hover:scale-105 shadow-lg"
+                className="gradient-bg-interactive text-white px-8 py-3 rounded-full font-semibold hover:shadow-xl transition-all transform hover:scale-105 glow-effect"
               >
                 Me contacter
               </a>
               <a
                 href="#apropos"
-                className="border-2 border-primary text-primary px-8 py-3 rounded-full font-semibold hover:bg-primary hover:text-white transition-all transform hover:scale-105"
+                className="border-2 border-primary text-primary px-8 py-3 rounded-full font-semibold hover:bg-primary hover:text-white transition-all transform hover:scale-105 hover:border-secondary"
               >
                 En savoir plus
               </a>

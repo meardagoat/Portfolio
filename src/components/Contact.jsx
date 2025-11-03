@@ -104,8 +104,8 @@ const Contact = () => {
                   whileHover={{ scale: 1.05, y: -5 }}
                 >
                   <motion.div 
-                    className="w-16 h-16 bg-gradient-to-r from-primary via-accent to-secondary rounded-full flex items-center justify-center mb-4 shadow-lg"
-                    whileHover={{ rotate: 360 }}
+                    className="w-16 h-16 gradient-bg-interactive rounded-full flex items-center justify-center mb-4 glow-effect"
+                    whileHover={{ rotate: 360, scale: 1.1 }}
                     transition={{ duration: 0.6 }}
                   >
                     <span className="text-3xl text-white">
@@ -207,7 +207,7 @@ const Contact = () => {
               <motion.button
                 type="submit"
                 disabled={status === 'sending'}
-                className="w-full bg-gradient-to-r from-primary via-accent to-secondary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                className="w-full gradient-bg-interactive text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 glow-effect"
                 whileHover={{ scale: status === 'sending' ? 1 : 1.02 }}
                 whileTap={{ scale: status === 'sending' ? 1 : 0.98 }}
               >
@@ -232,7 +232,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-gradient-to-r from-primary via-accent to-secondary p-8 rounded-2xl text-white text-center shadow-2xl"
+            className="gradient-bg-interactive p-8 rounded-2xl text-white text-center shadow-2xl glow-effect"
           >
             <h3 className="text-3xl font-bold mb-4">Travaillons ensemble !</h3>
             <p className="text-lg mb-6 opacity-90">

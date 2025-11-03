@@ -97,7 +97,7 @@ const Skills = () => {
                     </div>
                     <div className="w-full bg-dark-gray/50 rounded-full h-2.5">
                       <motion.div
-                        className="bg-gradient-to-r from-primary via-accent to-secondary h-2.5 rounded-full"
+                        className="gradient-bg-interactive h-2.5 rounded-full glow-effect"
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         viewport={{ once: true }}
