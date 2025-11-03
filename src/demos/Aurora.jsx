@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import Spline from '@splinetool/react-spline';
+import SplineScene from '../components/SplineScene';
 import { FaMusic, FaPalette, FaRocket, FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 
 const Aurora = () => {
@@ -127,9 +127,9 @@ const Aurora = () => {
               transition={{ duration: 1, delay: 0.3 }}
               className="relative h-[500px] md:h-[600px] rounded-2xl overflow-hidden border border-purple-500/30 backdrop-blur-xl bg-gradient-to-br from-purple-500/10 to-cyan-500/10"
             >
-              <Spline 
-                scene="https://prod.spline.design/placeholder-scene.splinecode"
-                className="w-full h-full"
+              <SplineScene 
+                sceneUrl={null}
+                fallbackGradient="from-purple-600 via-pink-600 to-cyan-600"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none"></div>
               {/* Glowing border effect */}

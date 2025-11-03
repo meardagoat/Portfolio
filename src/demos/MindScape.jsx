@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import Spline from '@splinetool/react-spline';
+import SplineScene from '../components/SplineScene';
 import { FaLeaf, FaBrain, FaHeart, FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 
 const MindScape = () => {
@@ -103,9 +103,9 @@ const MindScape = () => {
               transition={{ duration: 1, delay: 0.3 }}
               className="relative h-[500px] md:h-[600px] rounded-2xl overflow-hidden border border-white/10 backdrop-blur-xl bg-gradient-to-br from-blue-500/10 to-purple-500/10"
             >
-              <Spline 
-                scene="https://prod.spline.design/placeholder-scene.splinecode"
-                className="w-full h-full"
+              <SplineScene 
+                sceneUrl={null}
+                fallbackGradient="from-blue-500 via-purple-600 to-indigo-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent pointer-events-none"></div>
             </motion.div>

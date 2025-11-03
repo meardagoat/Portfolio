@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import Spline from '@splinetool/react-spline';
+import SplineScene from '../components/SplineScene';
 import { FaYinYang, FaMountain, FaWind, FaBalanceScale, FaArrowLeft } from 'react-icons/fa';
 
 const Zenify = () => {
@@ -105,9 +105,9 @@ const Zenify = () => {
               transition={{ duration: 1, delay: 0.3 }}
               className="relative h-[500px] md:h-[600px] rounded-2xl overflow-hidden border border-emerald-200/50 bg-gradient-to-br from-emerald-50 to-white shadow-2xl"
             >
-              <Spline 
-                scene="https://prod.spline.design/placeholder-scene.splinecode"
-                className="w-full h-full"
+              <SplineScene 
+                sceneUrl={null}
+                fallbackGradient="from-emerald-400 via-green-300 to-teal-400"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-white/50 to-transparent pointer-events-none"></div>
             </motion.div>
