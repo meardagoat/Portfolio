@@ -218,10 +218,9 @@ const Projects = () => {
                         {project.longDescription}
                       </p>
                     )}
-                  </div>
 
-                  {/* Technologies */}
-                  <div className={`flex flex-wrap gap-2 lg:gap-3 ${project.featured ? 'lg:mb-6' : 'mb-4 lg:mb-6'}`}>
+                    {/* Technologies */}
+                    <div className={`flex flex-wrap gap-2 lg:gap-3 ${project.featured ? 'mb-6' : 'mb-4 lg:mb-6'}`}>
                     {project.technologies.map((tech, techIndex) => (
                       <motion.div
                         key={techIndex}
@@ -238,6 +237,7 @@ const Projects = () => {
                         <span className="text-gray-300 text-xs lg:text-sm font-medium">{tech.name}</span>
                       </motion.div>
                     ))}
+                    </div>
                   </div>
 
                   {/* Action Buttons */}
