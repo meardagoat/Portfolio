@@ -24,7 +24,7 @@ const SectionLoader = () => (
 
 const Portfolio = () => {
   return (
-    <div className="min-h-screen bg-black relative">
+    <div className="min-h-screen bg-gradient-to-br from-black via-dark-gray to-black relative">
       {/* Background with blur effect like header */}
       <div className="fixed inset-0 bg-dark-gray/30 backdrop-blur-sm -z-10"></div>
       <MouseTrail />

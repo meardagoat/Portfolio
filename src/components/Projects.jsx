@@ -113,18 +113,20 @@ const Projects = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-1 gap-8 max-w-5xl mx-auto">
+        {/* Grid interactive pour desktop, liste pour mobile */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 max-w-7xl mx-auto">
           {projects.map((project, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="group"
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className={`group ${project.featured ? 'lg:col-span-2' : ''}`}
+              whileHover={{ y: -8 }}
             >
-              <div className="bg-dark-gray/40 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20">
-                <div className="relative h-64 md:h-96 overflow-hidden">
+              <div className="bg-dark-gray/40 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20 cursor-pointer h-full flex flex-col">
+                <div className={`relative overflow-hidden ${project.featured ? 'h-80 lg:h-[500px]' : 'h-64 lg:h-72'}`}>
                   {/* Gradient overlay */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-20 group-hover:opacity-30 transition-opacity duration-300 z-10`}></div>
                   
@@ -195,38 +197,36 @@ const Projects = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
 
-                <div className="p-8">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="text-primary font-semibold text-sm">{project.category}</span>
-                        <span className="text-gray-500">•</span>
-                        <span className="text-gray-400 text-sm">
-                          <FaPalette className="inline mr-1" />
-                          UI/UX Design
-                        </span>
-                      </div>
-                      <h3 className="text-2xl md:text-3xl font-bold gradient-text mb-3">
-                        {project.title}
-                      </h3>
-                      <p className="text-gray-300 mb-4 leading-relaxed">
-                        {project.description}
-                      </p>
-                      {project.longDescription && (
-                        <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-                          {project.longDescription}
-                        </p>
-                      )}
+                <div className={`p-6 lg:p-8 flex-grow flex flex-col ${project.featured ? 'lg:flex-row lg:gap-8' : ''}`}>
+                  <div className={`flex-1 ${project.featured ? 'lg:w-2/3' : ''}`}>
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-primary font-semibold text-sm">{project.category}</span>
+                      <span className="text-gray-500">•</span>
+                      <span className="text-gray-400 text-sm">
+                        <FaPalette className="inline mr-1" />
+                        UI/UX Design
+                      </span>
                     </div>
+                    <h3 className={`font-bold gradient-text mb-3 ${project.featured ? 'text-3xl lg:text-4xl' : 'text-2xl lg:text-2xl'}`}>
+                      {project.title}
+                    </h3>
+                    <p className={`text-gray-300 mb-4 leading-relaxed ${project.featured ? 'text-base lg:text-lg' : 'text-sm lg:text-base'}`}>
+                      {project.description}
+                    </p>
+                    {project.longDescription && project.featured && (
+                      <p className="text-gray-400 text-sm lg:text-base mb-6 leading-relaxed">
+                        {project.longDescription}
+                      </p>
+                    )}
                   </div>
 
                   {/* Technologies */}
-                  <div className="flex flex-wrap gap-3 mb-6">
+                  <div className={`flex flex-wrap gap-2 lg:gap-3 ${project.featured ? 'lg:mb-6' : 'mb-4 lg:mb-6'}`}>
                     {project.technologies.map((tech, techIndex) => (
                       <motion.div
                         key={techIndex}
-                        className="px-4 py-2 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 flex items-center gap-2 hover:border-white/20 transition-all"
-                        whileHover={{ scale: 1.05, y: -2 }}
+                        className="px-3 lg:px-4 py-1.5 lg:py-2 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 flex items-center gap-2 hover:border-white/20 transition-all"
+                        whileHover={{ scale: 1.1, y: -3, rotate: 2 }}
                         transition={{ duration: 0.2 }}
                       >
                         <span 
@@ -235,20 +235,20 @@ const Projects = () => {
                         >
                           {tech.icon}
                         </span>
-                        <span className="text-gray-300 text-sm font-medium">{tech.name}</span>
+                        <span className="text-gray-300 text-xs lg:text-sm font-medium">{tech.name}</span>
                       </motion.div>
                     ))}
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex flex-wrap gap-4 pt-4 border-t border-white/10">
+                  <div className={`flex flex-wrap gap-3 lg:gap-4 pt-4 border-t border-white/10 mt-auto ${project.featured ? 'lg:flex-row' : ''}`}>
                     {project.liveUrl && (
                       <motion.a
                         href={project.liveUrl}
                         target={project.liveUrl.startsWith('/') ? undefined : '_blank'}
                         rel={project.liveUrl.startsWith('/') ? undefined : 'noopener noreferrer'}
-                        className="px-6 py-3 rounded-full gradient-bg-interactive text-white font-semibold flex items-center gap-2 hover:shadow-xl transition-all glow-effect"
-                        whileHover={{ scale: 1.05 }}
+                        className="px-5 lg:px-6 py-2.5 lg:py-3 rounded-full gradient-bg-interactive text-white font-semibold text-sm lg:text-base flex items-center gap-2 hover:shadow-xl transition-all glow-effect"
+                        whileHover={{ scale: 1.08, y: -2 }}
                         whileTap={{ scale: 0.95 }}
                       >
                         <FaExternalLinkAlt />
@@ -260,8 +260,8 @@ const Projects = () => {
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-6 py-3 rounded-full bg-dark-gray/50 border border-white/20 text-white font-semibold flex items-center gap-2 hover:bg-dark-gray transition-all"
-                        whileHover={{ scale: 1.05 }}
+                        className="px-5 lg:px-6 py-2.5 lg:py-3 rounded-full bg-dark-gray/50 border border-white/20 text-white font-semibold text-sm lg:text-base flex items-center gap-2 hover:bg-dark-gray transition-all"
+                        whileHover={{ scale: 1.08, y: -2 }}
                         whileTap={{ scale: 0.95 }}
                       >
                         <FaGithub />
