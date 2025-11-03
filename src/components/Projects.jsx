@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaExternalLinkAlt, FaGithub, FaCode, FaPalette, FaRocket, FaCube } from 'react-icons/fa';
+import { FaExternalLinkAlt, FaGithub, FaCode, FaPalette, FaRocket, FaCube, FaBrain, FaLeaf, FaMusic } from 'react-icons/fa';
 import { SiReact, SiTailwindcss, SiVercel, SiFramer } from 'react-icons/si';
 import moodFlowBanner from '../assets/Mood_flow.jpg';
 
@@ -30,6 +30,8 @@ const Projects = () => {
       image: null,
       liveUrl: '/mindscape',
       githubUrl: null,
+      logo: <FaBrain />,
+      logoColor: '#6366f1',
       technologies: [
         { name: 'React', icon: <SiReact />, color: '#61DAFB' },
         { name: 'Tailwind CSS', icon: <SiTailwindcss />, color: '#06B6D4' },
@@ -47,6 +49,8 @@ const Projects = () => {
       image: null,
       liveUrl: '/zenify',
       githubUrl: null,
+      logo: <FaLeaf />,
+      logoColor: '#10b981',
       technologies: [
         { name: 'React', icon: <SiReact />, color: '#61DAFB' },
         { name: 'Tailwind CSS', icon: <SiTailwindcss />, color: '#06B6D4' },
@@ -64,6 +68,8 @@ const Projects = () => {
       image: null,
       liveUrl: '/aurora',
       githubUrl: null,
+      logo: <FaMusic />,
+      logoColor: '#a855f7',
       technologies: [
         { name: 'React', icon: <SiReact />, color: '#61DAFB' },
         { name: 'Tailwind CSS', icon: <SiTailwindcss />, color: '#06B6D4' },
@@ -123,7 +129,7 @@ const Projects = () => {
                   {/* Gradient overlay */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-20 group-hover:opacity-30 transition-opacity duration-300 z-10`}></div>
                   
-                  {/* Project Image or Placeholder */}
+                  {/* Project Image or Placeholder with Logo */}
                   {project.image ? (
                     <img 
                       src={project.image} 
@@ -131,11 +137,44 @@ const Projects = () => {
                       className="w-full h-full object-contain bg-dark-gray/20"
                     />
                   ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-primary/30 via-accent/30 to-secondary/30 flex items-center justify-center">
-                      <div className="text-center p-8">
-                        <FaRocket className="text-6xl text-white/50 mx-auto mb-4" />
-                        <p className="text-white/70 font-semibold">{project.title}</p>
+                    <div className={`w-full h-full bg-gradient-to-br ${project.gradient} opacity-80 flex items-center justify-center relative overflow-hidden`}>
+                      {/* Animated background pattern */}
+                      <div className="absolute inset-0 opacity-20">
+                        <div className="absolute top-0 left-0 w-full h-full" style={{
+                          backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)',
+                          backgroundSize: '40px 40px'
+                        }}></div>
                       </div>
+                      {/* Project Logo */}
+                      <motion.div
+                        className="relative z-10 text-center p-8"
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                      >
+                        <motion.div
+                          className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full bg-white/10 backdrop-blur-lg flex items-center justify-center mx-auto mb-6 border border-white/20 shadow-2xl"
+                          style={{ color: project.logoColor }}
+                          animate={{
+                            boxShadow: [
+                              `0 0 20px ${project.logoColor}40`,
+                              `0 0 40px ${project.logoColor}60`,
+                              `0 0 20px ${project.logoColor}40`,
+                            ],
+                          }}
+                          transition={{
+                            duration: 3,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                          }}
+                        >
+                          <div className="text-4xl sm:text-5xl md:text-6xl">
+                            {project.logo}
+                          </div>
+                        </motion.div>
+                        <p className="text-white font-bold text-lg sm:text-xl md:text-2xl">{project.title}</p>
+                      </motion.div>
                     </div>
                   )}
 
@@ -153,35 +192,8 @@ const Projects = () => {
                     </motion.div>
                   )}
 
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                    {project.liveUrl && (
-                      <motion.a
-                        href={project.liveUrl}
-                        target={project.liveUrl.startsWith('/') ? undefined : '_blank'}
-                        rel={project.liveUrl.startsWith('/') ? undefined : 'noopener noreferrer'}
-                        className="px-6 py-3 rounded-full gradient-bg-interactive text-white font-semibold flex items-center gap-2 hover:shadow-xl transition-all glow-effect"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <FaExternalLinkAlt />
-                        {project.category === 'Interactive Demo' ? 'Live Demo' : 'Voir le projet'}
-                      </motion.a>
-                    )}
-                    {project.githubUrl && (
-                      <motion.a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-6 py-3 rounded-full bg-white/10 backdrop-blur-lg text-white font-semibold flex items-center gap-2 hover:bg-white/20 transition-all border border-white/20"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <FaGithub />
-                        Code source
-                      </motion.a>
-                    )}
-                  </div>
+                  {/* Hover Overlay - Just visual effect, no buttons */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
 
                 <div className="p-8">

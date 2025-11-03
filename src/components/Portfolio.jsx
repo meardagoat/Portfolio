@@ -24,10 +24,12 @@ const SectionLoader = () => (
 
 const Portfolio = () => {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-black relative">
+      {/* Background with blur effect like header */}
+      <div className="fixed inset-0 bg-dark-gray/30 backdrop-blur-sm -z-10"></div>
       <MouseTrail />
       <Header />
-      <main>
+      <main className="relative z-0">
         <Suspense fallback={<SectionLoader />}>
           <Hero />
         </Suspense>
