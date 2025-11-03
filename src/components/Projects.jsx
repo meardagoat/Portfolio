@@ -68,26 +68,25 @@ const Projects = () => {
               className="group"
             >
               <div className="bg-dark-gray/40 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20">
-                <div className="relative h-64 md:h-80 overflow-hidden">
+                <div className="relative h-64 md:h-96 overflow-hidden">
                   {/* Gradient overlay */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-20 group-hover:opacity-30 transition-opacity duration-300`}></div>
+                  <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-20 group-hover:opacity-30 transition-opacity duration-300 z-10`}></div>
                   
                   {/* Project Image or Placeholder */}
-                  <div 
-                    className="w-full h-full bg-gradient-to-br from-primary/30 via-accent/30 to-secondary/30 flex items-center justify-center"
-                    style={{
-                      backgroundImage: project.image ? `url(${project.image})` : 'none',
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                    }}
-                  >
-                    {!project.image && (
+                  {project.image ? (
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-contain bg-dark-gray/20"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-primary/30 via-accent/30 to-secondary/30 flex items-center justify-center">
                       <div className="text-center p-8">
                         <FaRocket className="text-6xl text-white/50 mx-auto mb-4" />
                         <p className="text-white/70 font-semibold">{project.title}</p>
                       </div>
-                    )}
-                  </div>
+                    </div>
+                  )}
 
                   {/* Featured Badge */}
                   {project.featured && (
