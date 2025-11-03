@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaExternalLinkAlt, FaGithub, FaCode, FaPalette, FaRocket } from 'react-icons/fa';
+import { FaExternalLinkAlt, FaGithub, FaCode, FaPalette, FaRocket, FaCube } from 'react-icons/fa';
 import { SiReact, SiTailwindcss, SiVercel, SiFramer } from 'react-icons/si';
 import moodFlowBanner from '../assets/Mood_flow.jpg';
 
@@ -22,6 +22,57 @@ const Projects = () => {
       category: 'Web Development',
       featured: true,
       gradient: 'from-purple-500 via-pink-500 to-orange-500',
+    },
+    {
+      title: 'MindScape',
+      description: 'Plateforme immersive d\'auto-découverte et de pleine conscience avec visualisations 3D interactives. Explorez votre esprit et développez votre potentiel grâce à des outils innovants.',
+      longDescription: 'Une application révolutionnaire combinant psychologie, méditation et technologie 3D pour vous accompagner dans votre parcours de développement personnel et de bien-être mental.',
+      image: null,
+      liveUrl: '#mindscape-demo',
+      githubUrl: null,
+      technologies: [
+        { name: 'React', icon: <SiReact />, color: '#61DAFB' },
+        { name: 'Tailwind CSS', icon: <SiTailwindcss />, color: '#06B6D4' },
+        { name: 'Framer Motion', icon: <SiFramer />, color: '#0055FF' },
+        { name: 'Spline 3D', icon: <FaCube />, color: '#FFFFFF' },
+      ],
+      category: 'Interactive Demo',
+      featured: false,
+      gradient: 'from-blue-500 via-purple-500 to-pink-500',
+    },
+    {
+      title: 'Zenify',
+      description: 'Outil de digital detox et relaxation avec environnement 3D apaisant. Trouvez votre équilibre entre technologie et bien-être avec des sessions de méditation guidée.',
+      longDescription: 'Une expérience minimaliste et élégante pour vous aider à vous déconnecter du stress quotidien et reconnecter avec votre sérénité intérieure.',
+      image: null,
+      liveUrl: '#zenify-demo',
+      githubUrl: null,
+      technologies: [
+        { name: 'React', icon: <SiReact />, color: '#61DAFB' },
+        { name: 'Tailwind CSS', icon: <SiTailwindcss />, color: '#06B6D4' },
+        { name: 'Framer Motion', icon: <SiFramer />, color: '#0055FF' },
+        { name: 'Spline 3D', icon: <FaCube />, color: '#10B981' },
+      ],
+      category: 'Interactive Demo',
+      featured: false,
+      gradient: 'from-emerald-500 via-green-400 to-teal-500',
+    },
+    {
+      title: 'Aurora',
+      description: 'Application de focus créatif combinant musique, visualisation 3D et environnement immersif. Atteignez un état de flow optimal pour maximiser votre productivité et créativité.',
+      longDescription: 'Une expérience unique alliant design sombre, animations subtiles et scènes 3D pour vous propulser dans un état de concentration et créativité exceptionnel.',
+      image: null,
+      liveUrl: '#aurora-demo',
+      githubUrl: null,
+      technologies: [
+        { name: 'React', icon: <SiReact />, color: '#61DAFB' },
+        { name: 'Tailwind CSS', icon: <SiTailwindcss />, color: '#06B6D4' },
+        { name: 'Framer Motion', icon: <SiFramer />, color: '#0055FF' },
+        { name: 'Spline 3D', icon: <FaCube />, color: '#A855F7' },
+      ],
+      category: 'Interactive Demo',
+      featured: false,
+      gradient: 'from-purple-500 via-pink-500 to-cyan-500',
     },
   ];
 
@@ -107,14 +158,14 @@ const Projects = () => {
                     {project.liveUrl && (
                       <motion.a
                         href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        target={project.liveUrl.startsWith('#') ? undefined : '_blank'}
+                        rel={project.liveUrl.startsWith('#') ? undefined : 'noopener noreferrer'}
                         className="px-6 py-3 rounded-full gradient-bg-interactive text-white font-semibold flex items-center gap-2 hover:shadow-xl transition-all glow-effect"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
                         <FaExternalLinkAlt />
-                        Voir le projet
+                        {project.category === 'Interactive Demo' ? 'Live Demo' : 'Voir le projet'}
                       </motion.a>
                     )}
                     {project.githubUrl && (
@@ -183,14 +234,14 @@ const Projects = () => {
                     {project.liveUrl && (
                       <motion.a
                         href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        target={project.liveUrl.startsWith('#') ? undefined : '_blank'}
+                        rel={project.liveUrl.startsWith('#') ? undefined : 'noopener noreferrer'}
                         className="px-6 py-3 rounded-full gradient-bg-interactive text-white font-semibold flex items-center gap-2 hover:shadow-xl transition-all glow-effect"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
                         <FaExternalLinkAlt />
-                        Visiter le site
+                        {project.category === 'Interactive Demo' ? 'Live Demo' : 'Visiter le site'}
                       </motion.a>
                     )}
                     {project.githubUrl && (
@@ -221,7 +272,7 @@ const Projects = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center mt-12"
         >
-          <p className="text-gray-400 mb-4">D'autres projets arrivent bientôt...</p>
+          <p className="text-gray-400 mb-4">Explorez mes projets interactifs et découvrez mes créations</p>
           <motion.a
             href="#contact"
             className="inline-block px-8 py-3 rounded-full border-2 border-primary text-primary font-semibold hover:bg-primary hover:text-white transition-all"
