@@ -122,11 +122,11 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`group ${project.featured ? 'lg:col-span-2' : ''}`}
+              className="group"
               whileHover={{ y: -8 }}
             >
               <div className="bg-dark-gray/40 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20 cursor-pointer h-full flex flex-col">
-                <div className={`relative overflow-hidden ${project.featured ? 'h-80 lg:h-[500px]' : 'h-64 lg:h-72'}`}>
+                <div className="relative overflow-hidden h-64 lg:h-72">
                   {/* Gradient overlay */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-20 group-hover:opacity-30 transition-opacity duration-300 z-10`}></div>
                   
@@ -197,8 +197,8 @@ const Projects = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
 
-                <div className={`p-6 lg:p-8 flex-grow flex flex-col ${project.featured ? 'lg:flex-row lg:gap-8' : ''}`}>
-                  <div className={`flex-1 ${project.featured ? 'lg:w-2/3' : ''}`}>
+                <div className="p-6 lg:p-8 flex-grow flex flex-col">
+                  <div className="flex-1">
                     <div className="flex items-center gap-2 mb-3">
                       <span className="text-primary font-semibold text-sm">{project.category}</span>
                       <span className="text-gray-500">•</span>
@@ -207,20 +207,15 @@ const Projects = () => {
                         UI/UX Design
                       </span>
                     </div>
-                    <h3 className={`font-bold gradient-text mb-3 ${project.featured ? 'text-3xl lg:text-4xl' : 'text-2xl lg:text-2xl'}`}>
+                    <h3 className="text-2xl lg:text-2xl font-bold gradient-text mb-3">
                       {project.title}
                     </h3>
-                    <p className={`text-gray-300 mb-4 leading-relaxed ${project.featured ? 'text-base lg:text-lg' : 'text-sm lg:text-base'}`}>
+                    <p className="text-sm lg:text-base text-gray-300 mb-4 leading-relaxed">
                       {project.description}
                     </p>
-                    {project.longDescription && project.featured && (
-                      <p className="text-gray-400 text-sm lg:text-base mb-6 leading-relaxed">
-                        {project.longDescription}
-                      </p>
-                    )}
 
                     {/* Technologies */}
-                    <div className={`flex flex-wrap gap-2 lg:gap-3 ${project.featured ? 'mb-6' : 'mb-4 lg:mb-6'}`}>
+                    <div className="flex flex-wrap gap-2 lg:gap-3 mb-4 lg:mb-6">
                     {project.technologies.map((tech, techIndex) => (
                       <motion.div
                         key={techIndex}
@@ -241,7 +236,7 @@ const Projects = () => {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className={`flex flex-wrap gap-3 lg:gap-4 pt-4 border-t border-white/10 mt-auto ${project.featured ? 'lg:flex-row' : ''}`}>
+                  <div className="flex flex-wrap gap-3 lg:gap-4 pt-4 border-t border-white/10 mt-auto">
                     {project.liveUrl && (
                       <motion.a
                         href={project.liveUrl}
