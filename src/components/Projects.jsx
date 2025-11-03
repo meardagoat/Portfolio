@@ -95,17 +95,16 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <motion.div
+          <motion.span
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-primary/20 via-accent/20 to-secondary/20 border border-primary/30 mb-4 text-sm font-semibold gradient-text"
           >
-            <span className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-primary/20 via-accent/20 to-secondary/20 border border-primary/30 mb-4 text-sm font-semibold gradient-text">
-              <FaCode className="inline mr-2" />
-              Mes Projets
-            </span>
-          </motion.div>
+            <FaCode className="inline mr-2" />
+            Mes Projets
+          </motion.span>
           <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
             Réalisations & Projets
           </h2>

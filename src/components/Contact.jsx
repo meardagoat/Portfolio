@@ -235,9 +235,8 @@ const Contact = () => {
             className="gradient-bg-interactive p-8 rounded-2xl text-white text-center shadow-2xl glow-effect"
           >
             <h3 className="text-3xl font-bold mb-4">Travaillons ensemble !</h3>
-            <p className="text-lg mb-6 opacity-90">
-              Je suis toujours ouvert aux nouvelles opportunités et collaborations.
-              Que ce soit pour un stage, un projet ou simplement pour échanger, n'hésitez pas !
+            <p className="text-lg mb-6 opacity-90 max-w-2xl mx-auto leading-relaxed">
+              Je suis toujours ouvert aux nouvelles opportunités et collaborations. Que ce soit pour un stage, un projet ou simplement pour échanger, n'hésitez pas !
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <motion.a
