@@ -105,6 +105,7 @@ const MindScape = () => {
             >
               <SplineScene 
                 sceneUrl={null}
+                theme="mindscape"
                 fallbackGradient="from-blue-500 via-purple-600 to-indigo-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent pointer-events-none"></div>

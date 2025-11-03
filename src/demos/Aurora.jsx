@@ -129,6 +129,7 @@ const Aurora = () => {
             >
               <SplineScene 
                 sceneUrl={null}
+                theme="aurora"
                 fallbackGradient="from-purple-600 via-pink-600 to-cyan-600"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none"></div>

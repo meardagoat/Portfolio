@@ -107,6 +107,7 @@ const Zenify = () => {
             >
               <SplineScene 
                 sceneUrl={null}
+                theme="zenify"
                 fallbackGradient="from-emerald-400 via-green-300 to-teal-400"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-white/50 to-transparent pointer-events-none"></div>
