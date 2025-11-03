@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import Spline from '@splinetool/react-spline';
-import { FaYinYang, FaMountain, FaWind, FaBalanceScale } from 'react-icons/fa';
+import { FaYinYang, FaMountain, FaWind, FaBalanceScale, FaArrowLeft } from 'react-icons/fa';
 
 const Zenify = () => {
   const { scrollYProgress } = useScroll();
@@ -27,6 +28,20 @@ const Zenify = () => {
 
   return (
     <div className="min-h-screen bg-white text-gray-900 overflow-hidden relative">
+      {/* Back to Portfolio Button */}
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        className="fixed top-6 left-6 z-50"
+      >
+        <Link
+          to="/"
+          className="px-6 py-3 rounded-full bg-emerald-600 text-white font-semibold flex items-center gap-2 hover:bg-emerald-700 transition-all shadow-lg"
+        >
+          <FaArrowLeft />
+          Retour au portfolio
+        </Link>
+      </motion.div>
       {/* Subtle background waves */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div 

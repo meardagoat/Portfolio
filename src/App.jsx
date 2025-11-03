@@ -1,31 +1,20 @@
 import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import Experience from './components/Experience';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Education from './components/Education';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import MouseTrail from './components/MouseTrail';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Portfolio from './components/Portfolio';
+import MindScape from './demos/MindScape';
+import Zenify from './demos/Zenify';
+import Aurora from './demos/Aurora';
 
 function App() {
   return (
-    <div className="min-h-screen bg-black">
-      <MouseTrail />
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Experience />
-        <Skills />
-        <Projects />
-        <Education />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Portfolio />} />
+        <Route path="/mindscape" element={<MindScape />} />
+        <Route path="/zenify" element={<Zenify />} />
+        <Route path="/aurora" element={<Aurora />} />
+      </Routes>
+    </Router>
   );
 }
 

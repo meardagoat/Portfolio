@@ -28,7 +28,7 @@ const Projects = () => {
       description: 'Plateforme immersive d\'auto-découverte et de pleine conscience avec visualisations 3D interactives. Explorez votre esprit et développez votre potentiel grâce à des outils innovants.',
       longDescription: 'Une application révolutionnaire combinant psychologie, méditation et technologie 3D pour vous accompagner dans votre parcours de développement personnel et de bien-être mental.',
       image: null,
-      liveUrl: '#mindscape-demo',
+      liveUrl: '/mindscape',
       githubUrl: null,
       technologies: [
         { name: 'React', icon: <SiReact />, color: '#61DAFB' },
@@ -45,7 +45,7 @@ const Projects = () => {
       description: 'Outil de digital detox et relaxation avec environnement 3D apaisant. Trouvez votre équilibre entre technologie et bien-être avec des sessions de méditation guidée.',
       longDescription: 'Une expérience minimaliste et élégante pour vous aider à vous déconnecter du stress quotidien et reconnecter avec votre sérénité intérieure.',
       image: null,
-      liveUrl: '#zenify-demo',
+      liveUrl: '/zenify',
       githubUrl: null,
       technologies: [
         { name: 'React', icon: <SiReact />, color: '#61DAFB' },
@@ -62,7 +62,7 @@ const Projects = () => {
       description: 'Application de focus créatif combinant musique, visualisation 3D et environnement immersif. Atteignez un état de flow optimal pour maximiser votre productivité et créativité.',
       longDescription: 'Une expérience unique alliant design sombre, animations subtiles et scènes 3D pour vous propulser dans un état de concentration et créativité exceptionnel.',
       image: null,
-      liveUrl: '#aurora-demo',
+      liveUrl: '/aurora',
       githubUrl: null,
       technologies: [
         { name: 'React', icon: <SiReact />, color: '#61DAFB' },
@@ -158,8 +158,8 @@ const Projects = () => {
                     {project.liveUrl && (
                       <motion.a
                         href={project.liveUrl}
-                        target={project.liveUrl.startsWith('#') ? undefined : '_blank'}
-                        rel={project.liveUrl.startsWith('#') ? undefined : 'noopener noreferrer'}
+                        target={project.liveUrl.startsWith('/') ? undefined : '_blank'}
+                        rel={project.liveUrl.startsWith('/') ? undefined : 'noopener noreferrer'}
                         className="px-6 py-3 rounded-full gradient-bg-interactive text-white font-semibold flex items-center gap-2 hover:shadow-xl transition-all glow-effect"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
@@ -234,8 +234,8 @@ const Projects = () => {
                     {project.liveUrl && (
                       <motion.a
                         href={project.liveUrl}
-                        target={project.liveUrl.startsWith('#') ? undefined : '_blank'}
-                        rel={project.liveUrl.startsWith('#') ? undefined : 'noopener noreferrer'}
+                        target={project.liveUrl.startsWith('/') ? undefined : '_blank'}
+                        rel={project.liveUrl.startsWith('/') ? undefined : 'noopener noreferrer'}
                         className="px-6 py-3 rounded-full gradient-bg-interactive text-white font-semibold flex items-center gap-2 hover:shadow-xl transition-all glow-effect"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}

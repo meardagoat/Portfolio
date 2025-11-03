@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import Spline from '@splinetool/react-spline';
-import { FaMusic, FaPalette, FaRocket, FaArrowRight } from 'react-icons/fa';
+import { FaMusic, FaPalette, FaRocket, FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 
 const Aurora = () => {
   const features = [
@@ -34,6 +35,20 @@ const Aurora = () => {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden relative">
+      {/* Back to Portfolio Button */}
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        className="fixed top-6 left-6 z-50"
+      >
+        <Link
+          to="/"
+          className="px-6 py-3 rounded-full bg-white/10 backdrop-blur-xl border border-purple-500/30 text-white font-semibold flex items-center gap-2 hover:bg-white/20 transition-all"
+        >
+          <FaArrowLeft />
+          Retour au portfolio
+        </Link>
+      </motion.div>
       {/* Animated gradient background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div

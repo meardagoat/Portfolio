@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import Spline from '@splinetool/react-spline';
-import { FaLeaf, FaBrain, FaHeart, FaArrowRight } from 'react-icons/fa';
+import { FaLeaf, FaBrain, FaHeart, FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 
 const MindScape = () => {
   const features = [
@@ -27,6 +28,20 @@ const MindScape = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 text-white overflow-hidden relative">
+      {/* Back to Portfolio Button */}
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        className="fixed top-6 left-6 z-50"
+      >
+        <Link
+          to="/"
+          className="px-6 py-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-white font-semibold flex items-center gap-2 hover:bg-white/20 transition-all"
+        >
+          <FaArrowLeft />
+          Retour au portfolio
+        </Link>
+      </motion.div>
       {/* Background particles effect */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
