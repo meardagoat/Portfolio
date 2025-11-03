@@ -28,7 +28,7 @@ const Contact = () => {
     {
       icon: <FaMapMarkerAlt />,
       title: 'Adresse',
-      value: '2 Rue Jean Anouilh, 78420, Carrière Sur Seine',
+      value: '78420, Carrière Sur Seine',
       link: '#',
     },
   ];
