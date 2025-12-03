@@ -34,28 +34,28 @@ const Education = () => {
   ];
 
   return (
-    <section id="formation" className="py-32 bg-white">
-      <div className="container mx-auto px-6 lg:px-12">
+    <section id="formation" className="py-20 sm:py-32 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-20"
+          className="mb-12 sm:mb-20"
         >
-          <div className="flex items-center gap-4 mb-8">
-            <span className="text-sm font-medium text-gray-500">[06]</span>
-            <span className="text-sm text-gray-500">EDUCATION</span>
+          <div className="flex items-center gap-4 mb-6 sm:mb-8">
+            <span className="text-xs sm:text-sm font-medium text-gray-500">[06]</span>
+            <span className="text-xs sm:text-sm text-gray-500">EDUCATION</span>
           </div>
-          <h2 className="text-5xl md:text-7xl font-light text-gray-900 mb-8 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-gray-900 mb-4 sm:mb-8 leading-tight">
             Formation
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl leading-relaxed">
+          <p className="text-base sm:text-lg text-gray-600 max-w-3xl leading-relaxed">
             Mon parcours académique et mes diplômes
           </p>
         </motion.div>
 
-        <div className="space-y-8">
+        <div className="space-y-6 sm:space-y-8">
           {education.map((edu, index) => (
             <motion.div
               key={index}
@@ -63,27 +63,30 @@ const Education = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="border-b border-gray-200 pb-8 last:border-0"
+              className="border-b border-gray-200 pb-6 sm:pb-8 last:border-0"
+              whileHover={{ x: 4 }}
             >
-              <div className="flex flex-col md:flex-row gap-8 items-start">
+              <div className="flex flex-col md:flex-row gap-4 sm:gap-8 items-start">
                 <div className="w-full md:w-1/4">
-                  <span className="text-sm text-gray-500 font-medium">{edu.year}</span>
+                  <span className="text-xs sm:text-sm text-gray-500 font-medium">{edu.year}</span>
                 </div>
                 <div className="w-full md:w-3/4">
-                  <div className="flex items-start gap-4 mb-3">
+                  <div className="flex items-start gap-3 sm:gap-4 mb-2 sm:mb-3">
                     {edu.logo && (
-                      <img 
+                      <motion.img 
                         src={edu.logo} 
                         alt={`Logo ${edu.school}`}
-                        className="w-12 h-12 object-contain"
+                        className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+                        whileHover={{ rotate: 360, scale: 1.1 }}
+                        transition={{ duration: 0.5 }}
                       />
                     )}
                     <div>
-                      <h3 className="text-2xl font-medium text-gray-900 mb-1">{edu.school}</h3>
-                      <p className="text-gray-600 font-medium mb-2">{edu.degree}</p>
+                      <h3 className="text-xl sm:text-2xl font-medium text-gray-900 mb-1">{edu.school}</h3>
+                      <p className="text-gray-600 font-medium text-sm sm:text-base mb-1 sm:mb-2">{edu.degree}</p>
                     </div>
                   </div>
-                  <p className="text-gray-600 leading-relaxed">{edu.description}</p>
+                  <p className="text-gray-600 leading-relaxed text-sm sm:text-base">{edu.description}</p>
                 </div>
               </div>
             </motion.div>

@@ -50,28 +50,28 @@ const Skills = () => {
   ];
 
   return (
-    <section id="competences" className="py-32 bg-white">
-      <div className="container mx-auto px-6 lg:px-12">
+    <section id="competences" className="py-20 sm:py-32 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-20"
+          className="mb-12 sm:mb-20"
         >
-          <div className="flex items-center gap-4 mb-8">
-            <span className="text-sm font-medium text-gray-500">[04]</span>
-            <span className="text-sm text-gray-500">SKILLS</span>
+          <div className="flex items-center gap-4 mb-6 sm:mb-8">
+            <span className="text-xs sm:text-sm font-medium text-gray-500">[04]</span>
+            <span className="text-xs sm:text-sm text-gray-500">SKILLS</span>
           </div>
-          <h2 className="text-5xl md:text-7xl font-light text-gray-900 mb-8 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-gray-900 mb-4 sm:mb-8 leading-tight">
             Compétences
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl leading-relaxed">
+          <p className="text-base sm:text-lg text-gray-600 max-w-3xl leading-relaxed">
             Technologies et outils que je maîtrise
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-8 sm:gap-12">
           {skillCategories.map((category, catIndex) => (
             <motion.div
               key={catIndex}
@@ -79,20 +79,29 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: catIndex * 0.1 }}
-              className="space-y-6"
+              className="space-y-4 sm:space-y-6"
             >
-              <h3 className="text-2xl font-medium text-gray-900 mb-6">{category.title}</h3>
-              <div className="space-y-6">
+              <h3 className="text-xl sm:text-2xl font-medium text-gray-900 mb-4 sm:mb-6">{category.title}</h3>
+              <div className="space-y-4 sm:space-y-6">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex}>
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center gap-3">
-                        <span className="text-2xl" style={{ color: skill.color }}>
+                  <motion.div
+                    key={skillIndex}
+                    whileHover={{ x: 4 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className="flex items-center justify-between mb-2 sm:mb-3">
+                      <div className="flex items-center gap-2 sm:gap-3">
+                        <motion.span
+                          className="text-xl sm:text-2xl"
+                          style={{ color: skill.color }}
+                          whileHover={{ rotate: 360, scale: 1.2 }}
+                          transition={{ duration: 0.5 }}
+                        >
                           {skill.icon}
-                        </span>
-                        <span className="font-medium text-gray-900">{skill.name}</span>
+                        </motion.span>
+                        <span className="font-medium text-gray-900 text-sm sm:text-base">{skill.name}</span>
                       </div>
-                      <span className="text-sm text-gray-500 font-medium">{skill.level}%</span>
+                      <span className="text-xs sm:text-sm text-gray-500 font-medium">{skill.level}%</span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-1.5">
                       <motion.div
@@ -103,7 +112,7 @@ const Skills = () => {
                         transition={{ duration: 1, delay: skillIndex * 0.1 }}
                       />
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>

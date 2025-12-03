@@ -52,28 +52,28 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-32 bg-gray-50">
-      <div className="container mx-auto px-6 lg:px-12">
+    <section id="experience" className="py-20 sm:py-32 bg-gray-50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-20"
+          className="mb-12 sm:mb-20"
         >
-          <div className="flex items-center gap-4 mb-8">
-            <span className="text-sm font-medium text-gray-500">[03]</span>
-            <span className="text-sm text-gray-500">EXPERIENCE</span>
+          <div className="flex items-center gap-4 mb-6 sm:mb-8">
+            <span className="text-xs sm:text-sm font-medium text-gray-500">[03]</span>
+            <span className="text-xs sm:text-sm text-gray-500">EXPERIENCE</span>
           </div>
-          <h2 className="text-5xl md:text-7xl font-light text-gray-900 mb-8 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-gray-900 mb-4 sm:mb-8 leading-tight">
             Expériences professionnelles
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl leading-relaxed">
+          <p className="text-base sm:text-lg text-gray-600 max-w-3xl leading-relaxed">
             Mon parcours professionnel et mes réalisations
           </p>
         </motion.div>
 
-        <div className="space-y-8">
+        <div className="space-y-6 sm:space-y-8">
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
@@ -81,31 +81,39 @@ const Experience = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="border-b border-gray-200 pb-8 last:border-0"
+              className="border-b border-gray-200 pb-6 sm:pb-8 last:border-0"
+              whileHover={{ x: 4 }}
             >
-              <div className="flex flex-col md:flex-row gap-8 items-start">
+              <div className="flex flex-col md:flex-row gap-4 sm:gap-8 items-start">
                 <div className="w-full md:w-1/4">
-                  <span className="text-sm text-gray-500 font-medium">{exp.year}</span>
+                  <span className="text-xs sm:text-sm text-gray-500 font-medium">{exp.year}</span>
                 </div>
                 <div className="w-full md:w-3/4">
-                  <div className="flex items-start gap-4 mb-3">
+                  <div className="flex items-start gap-3 sm:gap-4 mb-2 sm:mb-3">
                     {exp.logo ? (
-                      <img 
+                      <motion.img 
                         src={exp.logo} 
                         alt={`Logo ${exp.title}`}
-                        className="w-12 h-12 object-contain"
+                        className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+                        whileHover={{ rotate: 360, scale: 1.1 }}
+                        transition={{ duration: 0.5 }}
                       />
                     ) : (
-                      <div className="w-12 h-12 rounded-full flex items-center justify-center text-white text-xl" style={{ backgroundColor: exp.color }}>
+                      <motion.div
+                        className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-white text-lg sm:text-xl"
+                        style={{ backgroundColor: exp.color }}
+                        whileHover={{ rotate: 360, scale: 1.1 }}
+                        transition={{ duration: 0.5 }}
+                      >
                         {exp.icon}
-                      </div>
+                      </motion.div>
                     )}
                     <div>
-                      <h3 className="text-2xl font-medium text-gray-900 mb-1">{exp.title}</h3>
-                      <p className="text-gray-600 font-medium">{exp.role}</p>
+                      <h3 className="text-xl sm:text-2xl font-medium text-gray-900 mb-1">{exp.title}</h3>
+                      <p className="text-gray-600 font-medium text-sm sm:text-base">{exp.role}</p>
                     </div>
                   </div>
-                  <p className="text-gray-600 leading-relaxed">{exp.description}</p>
+                  <p className="text-gray-600 leading-relaxed text-sm sm:text-base">{exp.description}</p>
                 </div>
               </div>
             </motion.div>
