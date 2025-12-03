@@ -1,5 +1,4 @@
 import React from 'react';
-// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { 
   FaReact, FaHtml5, FaCss3Alt, FaJava, FaPython, 
@@ -51,53 +50,53 @@ const Skills = () => {
   ];
 
   return (
-    <section id="competences" className="py-20 bg-gradient-to-br from-black via-dark-gray to-black">
-      <div className="container mx-auto px-6">
+    <section id="competences" className="py-32 bg-white">
+      <div className="container mx-auto px-6 lg:px-12">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">Compétences</h2>
-          <p className="text-gray-300 text-lg">Technologies et outils que je maîtrise</p>
+          <div className="flex items-center gap-4 mb-8">
+            <span className="text-sm font-medium text-gray-500">[04]</span>
+            <span className="text-sm text-gray-500">SKILLS</span>
+          </div>
+          <h2 className="text-5xl md:text-7xl font-light text-gray-900 mb-8 leading-tight">
+            Compétences
+          </h2>
+          <p className="text-lg text-gray-600 max-w-3xl leading-relaxed">
+            Technologies et outils que je maîtrise
+          </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-12">
           {skillCategories.map((category, catIndex) => (
             <motion.div
               key={catIndex}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: catIndex * 0.1 }}
-              className="bg-dark-gray/30 backdrop-blur-lg border border-white/10 p-8 rounded-2xl shadow-lg"
+              className="space-y-6"
             >
-              <h3 className="text-2xl font-bold text-white mb-6">{category.title}</h3>
-              <div className="space-y-4">
+              <h3 className="text-2xl font-medium text-gray-900 mb-6">{category.title}</h3>
+              <div className="space-y-6">
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex}>
-                    <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center gap-3">
-                        <motion.span 
-                          className="text-3xl" 
-                          style={{ 
-                            color: skill.color || '#6366f1',
-                            filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))'
-                          }}
-                          whileHover={{ scale: 1.2, rotate: 5 }}
-                          transition={{ duration: 0.2 }}
-                        >
+                        <span className="text-2xl" style={{ color: skill.color }}>
                           {skill.icon}
-                        </motion.span>
-                        <span className="font-semibold text-gray-200">{skill.name}</span>
+                        </span>
+                        <span className="font-medium text-gray-900">{skill.name}</span>
                       </div>
-                      <span className="text-primary font-semibold">{skill.level}%</span>
+                      <span className="text-sm text-gray-500 font-medium">{skill.level}%</span>
                     </div>
-                    <div className="w-full bg-dark-gray/50 rounded-full h-2.5">
+                    <div className="w-full bg-gray-200 rounded-full h-1.5">
                       <motion.div
-                        className="gradient-bg-interactive h-2.5 rounded-full glow-effect"
+                        className="bg-gray-900 h-1.5 rounded-full"
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         viewport={{ once: true }}
@@ -116,4 +115,3 @@ const Skills = () => {
 };
 
 export default Skills;
-

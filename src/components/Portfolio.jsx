@@ -1,7 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import MouseTrail from './MouseTrail';
 
 // Lazy loading des sections pour optimiser les performances
 const Hero = lazy(() => import('./Hero'));
@@ -14,20 +13,17 @@ const Contact = lazy(() => import('./Contact'));
 
 // Loading placeholder minimaliste
 const SectionLoader = () => (
-  <div className="min-h-screen bg-black flex items-center justify-center">
+  <div className="min-h-screen bg-white flex items-center justify-center">
     <div className="animate-pulse">
-      <div className="h-8 w-64 bg-primary/20 rounded mb-4"></div>
-      <div className="h-4 w-48 bg-primary/10 rounded"></div>
+      <div className="h-8 w-64 bg-gray-200 rounded mb-4"></div>
+      <div className="h-4 w-48 bg-gray-200 rounded"></div>
     </div>
   </div>
 );
 
 const Portfolio = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-dark-gray to-black relative">
-      {/* Background with blur effect like header */}
-      <div className="fixed inset-0 bg-dark-gray/30 backdrop-blur-sm -z-10"></div>
-      <MouseTrail />
+    <div className="min-h-screen bg-white text-gray-900 relative">
       <Header />
       <main className="relative z-0">
         <Suspense fallback={<SectionLoader />}>
@@ -58,4 +54,3 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
-

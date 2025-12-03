@@ -1,35 +1,22 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaHeart } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-black via-dark-gray to-black text-white py-8">
-      <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center"
-        >
-          <p className="text-lg mb-2">
-            Conçu et développé avec{' '}
-            <motion.span
-              className="inline-block text-red-500"
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 1, repeat: Infinity }}
-            >
-              <FaHeart className="inline" />
-            </motion.span>
-            {' '}par Kane Abdoul
+    <footer className="bg-white border-t border-gray-200 py-12">
+      <div className="container mx-auto px-6 lg:px-12">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-sm text-gray-600">
+            © {new Date().getFullYear()} Kane Abdoul. All Rights Reserved.
           </p>
-          <p className="text-gray-400">© {new Date().getFullYear()} Tous droits réservés</p>
-        </motion.div>
+          <div className="flex gap-6 text-sm text-gray-600">
+            <a href="#" className="hover:text-gray-900 transition-colors">Terms</a>
+            <a href="#" className="hover:text-gray-900 transition-colors">Privacy Policy</a>
+          </div>
+        </div>
       </div>
     </footer>
   );
 };
 
 export default Footer;
-

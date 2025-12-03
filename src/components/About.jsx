@@ -1,5 +1,4 @@
 import React from 'react';
-// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { FaBasketballBall, FaMusic, FaCamera, FaUtensils } from 'react-icons/fa';
 
@@ -25,40 +24,46 @@ const About = () => {
   ];
 
   return (
-    <section id="apropos" className="py-20 bg-gradient-to-br from-black via-dark-gray to-black">
-      <div className="container mx-auto px-6">
+    <section id="apropos" className="py-32 bg-white">
+      <div className="container mx-auto px-6 lg:px-12">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">À propos de moi</h2>
-          <p className="text-gray-300 text-lg max-w-3xl mx-auto">
-            Passionné par la technologie et l'innovation, je combine mes compétences en business et en développement 
-            pour créer des solutions impactantes.
+          <div className="flex items-center gap-4 mb-8">
+            <span className="text-sm font-medium text-gray-500">[02]</span>
+            <span className="text-sm text-gray-500">ABOUT</span>
+          </div>
+          <h2 className="text-5xl md:text-7xl font-light text-gray-900 mb-8 leading-tight">
+            Passionné par la technologie et l'innovation
+          </h2>
+          <p className="text-lg text-gray-600 max-w-3xl leading-relaxed">
+            Je combine mes compétences en business et en développement pour créer des solutions impactantes. 
+            Étudiant à EPITECH, j'allie expertise technique et vision stratégique.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 mb-16">
+        <div className="grid md:grid-cols-2 gap-16 mb-20">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-2xl font-bold mb-6 gradient-text">Langues</h3>
-            <div className="space-y-4">
+            <h3 className="text-2xl font-medium mb-8 text-gray-900">Langues</h3>
+            <div className="space-y-6">
               {languages.map((lang, index) => (
                 <div key={index}>
-                  <div className="flex justify-between mb-2">
-                    <span className="font-semibold text-gray-200">{lang.name}</span>
-                    <span className="text-gray-500">{lang.level}</span>
+                  <div className="flex justify-between mb-3">
+                    <span className="font-medium text-gray-900">{lang.name}</span>
+                    <span className="text-gray-500 text-sm">{lang.level}</span>
                   </div>
-                  <div className="w-full bg-dark-gray rounded-full h-3">
+                  <div className="w-full bg-gray-200 rounded-full h-1.5">
                     <motion.div
-                      className="gradient-bg-interactive h-3 rounded-full glow-effect"
+                      className="bg-gray-900 h-1.5 rounded-full"
                       initial={{ width: 0 }}
                       whileInView={{ width: `${lang.percentage}%` }}
                       viewport={{ once: true }}
@@ -71,25 +76,25 @@ const About = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-2xl font-bold mb-6 gradient-text">Récompenses</h3>
+            <h3 className="text-2xl font-medium mb-8 text-gray-900">Récompenses</h3>
             <div className="space-y-4">
               {awards.map((award, index) => (
                 <motion.div
                   key={index}
-                  className="bg-dark-gray/30 backdrop-blur-lg border border-white/10 p-4 rounded-lg hover:border-white/20"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
+                  className="border-b border-gray-200 pb-4 last:border-0"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
                 >
-                  <div className="flex items-start">
-                    <span className="gradient-bg-interactive text-white px-3 py-1 rounded-full text-sm font-semibold mr-4 glow-effect">
-                      {award.year}
-                    </span>
-                    <p className="text-white font-medium">{award.title}</p>
+                  <div className="flex items-start gap-4">
+                    <span className="text-sm text-gray-500 font-medium min-w-[60px]">{award.year}</span>
+                    <p className="text-gray-700">{award.title}</p>
                   </div>
                 </motion.div>
               ))}
@@ -98,24 +103,27 @@ const About = () => {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="text-2xl font-bold mb-8 text-center gradient-text">Centres d'intérêt</h3>
+          <h3 className="text-2xl font-medium mb-12 text-gray-900">Centres d'intérêt</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {interests.map((interest, index) => (
               <motion.div
                 key={index}
-                className="bg-dark-gray/50 p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-shadow"
-                whileHover={{ scale: 1.05, y: -5 }}
-                transition={{ duration: 0.3 }}
+                className="border border-gray-200 p-8 text-center hover:border-gray-900 transition-colors"
+                whileHover={{ y: -4 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
               >
-                <div className="text-5xl text-primary mb-3 flex justify-center">
+                <div className="text-4xl text-gray-900 mb-4 flex justify-center">
                   {interest.icon}
                 </div>
-                <p className="font-semibold text-gray-200">{interest.name}</p>
+                <p className="font-medium text-gray-700">{interest.name}</p>
               </motion.div>
             ))}
           </div>
@@ -126,4 +134,3 @@ const About = () => {
 };
 
 export default About;
-

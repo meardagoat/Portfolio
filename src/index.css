@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-black text-white;
+    @apply bg-white text-gray-900;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -12,107 +12,5 @@
   
   * {
     @apply scroll-smooth;
-  }
-}
-
-@keyframes gradient-shift {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-@keyframes gradient-pulse {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.8;
-    transform: scale(1.02);
-  }
-}
-
-@keyframes gradient-flow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@layer utilities {
-  .gradient-text {
-    @apply bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent;
-    background-size: 200% 200%;
-    animation: gradient-flow 3s ease infinite;
-    transition: all 0.3s ease;
-  }
-  
-  .gradient-text:hover {
-    animation-duration: 1.5s;
-    filter: drop-shadow(0 0 8px rgba(255, 107, 53, 0.5));
-  }
-  
-  .gradient-bg-interactive {
-    background: linear-gradient(135deg, #FF6B35, #BF5AF2, #0A84FF, #FF6B35);
-    background-size: 300% 300%;
-    animation: gradient-shift 5s ease infinite;
-  }
-  
-  .gradient-border-interactive {
-    position: relative;
-    background: linear-gradient(135deg, #FF6B35, #BF5AF2, #0A84FF, #FF6B35);
-    background-size: 300% 300%;
-    animation: gradient-shift 5s ease infinite;
-    padding: 2px;
-  }
-  
-  .gradient-border-interactive::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 2px;
-    background: linear-gradient(135deg, #FF6B35, #BF5AF2, #0A84FF, #FF6B35);
-    background-size: 300% 300%;
-    animation: gradient-shift 5s ease infinite;
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-  }
-  
-  .glass-effect {
-    @apply bg-white/5 backdrop-blur-lg border border-white/10;
-    transition: all 0.3s ease;
-  }
-  
-  .glass-effect:hover {
-    @apply bg-white/10 border-white/20;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  }
-  
-  .apple-card {
-    @apply bg-dark-gray/80 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all;
-  }
-  
-  .glow-effect {
-    box-shadow: 0 0 20px rgba(255, 107, 53, 0.3), 0 0 40px rgba(191, 90, 242, 0.2), 0 0 60px rgba(10, 132, 255, 0.1);
-    transition: box-shadow 0.3s ease;
-  }
-  
-  .glow-effect:hover {
-    box-shadow: 0 0 30px rgba(255, 107, 53, 0.5), 0 0 60px rgba(191, 90, 242, 0.4), 0 0 90px rgba(10, 132, 255, 0.3);
-  }
-  
-  .text-glow {
-    text-shadow: 0 0 10px rgba(255, 107, 53, 0.5), 0 0 20px rgba(191, 90, 242, 0.3);
   }
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { FaBiking, FaHotel, FaBox, FaUtensils, FaShoppingCart } from 'react-icons/fa';
 
@@ -53,76 +52,64 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-gradient-to-br from-black via-dark-gray to-black">
-      <div className="container mx-auto px-6">
+    <section id="experience" className="py-32 bg-gray-50">
+      <div className="container mx-auto px-6 lg:px-12">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">Expériences professionnelles</h2>
-          <p className="text-gray-300 text-lg">Mon parcours professionnel et mes réalisations</p>
+          <div className="flex items-center gap-4 mb-8">
+            <span className="text-sm font-medium text-gray-500">[03]</span>
+            <span className="text-sm text-gray-500">EXPERIENCE</span>
+          </div>
+          <h2 className="text-5xl md:text-7xl font-light text-gray-900 mb-8 leading-tight">
+            Expériences professionnelles
+          </h2>
+          <p className="text-lg text-gray-600 max-w-3xl leading-relaxed">
+            Mon parcours professionnel et mes réalisations
+          </p>
         </motion.div>
 
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-primary to-secondary z-0"></div>
-
-          <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`flex flex-col md:flex-row items-center ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
-              >
-                <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                  <motion.div
-                    className="bg-dark-gray/50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow"
-                    whileHover={{ scale: 1.03 }}
-                  >
-                    <span className="inline-block gradient-bg-interactive text-white px-4 py-1 rounded-full text-sm font-semibold mb-3 glow-effect">
-                      {exp.year}
-                    </span>
-                    <h3 className="text-xl font-bold text-white mb-2">{exp.title}</h3>
-                    <h4 className="text-lg text-primary font-semibold mb-3">{exp.role}</h4>
-                    <p className="text-gray-300">{exp.description}</p>
-                  </motion.div>
+        <div className="space-y-8">
+          {experiences.map((exp, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="border-b border-gray-200 pb-8 last:border-0"
+            >
+              <div className="flex flex-col md:flex-row gap-8 items-start">
+                <div className="w-full md:w-1/4">
+                  <span className="text-sm text-gray-500 font-medium">{exp.year}</span>
                 </div>
-
-                <div className="w-full md:w-2/12 flex justify-center my-4 md:my-0 relative z-10">
-                  <motion.div
-                    className="w-16 h-16 rounded-full flex items-center justify-center shadow-lg overflow-hidden"
-                    style={{ 
-                      backgroundColor: exp.logo ? '#ffffff' : exp.color,
-                      boxShadow: `0 4px 14px ${exp.color}40`,
-                      border: exp.logo ? '2px solid #e5e7eb' : 'none'
-                    }}
-                    whileHover={{ scale: 1.2, rotate: exp.logo ? 0 : 360 }}
-                    transition={{ duration: 0.5 }}
-                  >
+                <div className="w-full md:w-3/4">
+                  <div className="flex items-start gap-4 mb-3">
                     {exp.logo ? (
                       <img 
                         src={exp.logo} 
                         alt={`Logo ${exp.title}`}
-                        className="w-12 h-12 object-contain p-1"
+                        className="w-12 h-12 object-contain"
                       />
                     ) : (
-                      <span className="text-2xl text-white">{exp.icon}</span>
+                      <div className="w-12 h-12 rounded-full flex items-center justify-center text-white text-xl" style={{ backgroundColor: exp.color }}>
+                        {exp.icon}
+                      </div>
                     )}
-                  </motion.div>
+                    <div>
+                      <h3 className="text-2xl font-medium text-gray-900 mb-1">{exp.title}</h3>
+                      <p className="text-gray-600 font-medium">{exp.role}</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed">{exp.description}</p>
                 </div>
-
-                <div className="w-full md:w-5/12"></div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

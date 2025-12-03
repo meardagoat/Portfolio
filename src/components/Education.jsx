@@ -1,7 +1,5 @@
 import React from 'react';
-// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-import { FaLaptopCode, FaBusinessTime, FaSeedling, FaBook } from 'react-icons/fa';
 
 const Education = () => {
   const education = [
@@ -10,8 +8,6 @@ const Education = () => {
       school: 'EPITECH',
       degree: 'Business et Technology Manager',
       description: 'Formation complète en gestion de projet technologique, développement informatique et management.',
-      icon: <FaLaptopCode />,
-      color: '#6366f1',
       logo: '/logos/epitech.png',
     },
     {
@@ -19,8 +15,6 @@ const Education = () => {
       school: 'ISEMA BUSINESS SCHOOL',
       degree: 'Responsable d\'affaires en agro-alimentaire',
       description: 'Formation en gestion commerciale et management dans le secteur agro-alimentaire.',
-      icon: <FaBusinessTime />,
-      color: '#10B981',
       logo: '/logos/isema.png',
     },
     {
@@ -28,8 +22,6 @@ const Education = () => {
       school: 'BEM DAKAR',
       degree: 'Première année en Agro business and industry',
       description: 'Fondamentaux du business et de l\'industrie agro-alimentaire.',
-      icon: <FaSeedling />,
-      color: '#F59E0B',
       logo: '/logos/bem.png',
     },
     {
@@ -37,69 +29,63 @@ const Education = () => {
       school: 'Lycée privé Mikado',
       degree: 'Baccalauréat L2, sciences humaines',
       description: 'Formation générale avec spécialisation en sciences humaines.',
-      icon: <FaBook />,
-      color: '#8B5CF6',
       logo: null,
     },
   ];
 
   return (
-    <section id="formation" className="py-20 bg-gradient-to-br from-black via-dark-gray to-black">
-      <div className="container mx-auto px-6">
+    <section id="formation" className="py-32 bg-white">
+      <div className="container mx-auto px-6 lg:px-12">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">Formation</h2>
-          <p className="text-gray-300 text-lg">Mon parcours académique et mes diplômes</p>
+          <div className="flex items-center gap-4 mb-8">
+            <span className="text-sm font-medium text-gray-500">[06]</span>
+            <span className="text-sm text-gray-500">EDUCATION</span>
+          </div>
+          <h2 className="text-5xl md:text-7xl font-light text-gray-900 mb-8 leading-tight">
+            Formation
+          </h2>
+          <p className="text-lg text-gray-600 max-w-3xl leading-relaxed">
+            Mon parcours académique et mes diplômes
+          </p>
         </motion.div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="space-y-8">
           {education.map((edu, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="mb-8"
+              className="border-b border-gray-200 pb-8 last:border-0"
             >
-              <motion.div
-                className="bg-dark-gray/50 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all flex items-start gap-6"
-                whileHover={{ scale: 1.02 }}
-              >
-                <motion.div
-                  className="flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center shadow-lg overflow-hidden"
-                  style={{ 
-                    backgroundColor: edu.logo ? '#ffffff' : edu.color,
-                    boxShadow: `0 4px 14px ${edu.color}40`,
-                    border: edu.logo ? '2px solid #e5e7eb' : 'none'
-                  }}
-                  whileHover={{ rotate: edu.logo ? 0 : 360, scale: 1.1 }}
-                  transition={{ duration: 0.6 }}
-                >
-                  {edu.logo ? (
-                    <img 
-                      src={edu.logo} 
-                      alt={`Logo ${edu.school}`}
-                      className="w-14 h-14 object-contain p-1"
-                    />
-                  ) : (
-                    <span className="text-2xl text-white">{edu.icon}</span>
-                  )}
-                </motion.div>
-                <div className="flex-grow">
-                  <span className="inline-block gradient-bg-interactive text-white px-4 py-1 rounded-full text-sm font-semibold mb-3 glow-effect">
-                    {edu.year}
-                  </span>
-                  <h3 className="text-2xl font-bold text-white mb-1">{edu.school}</h3>
-                  <h4 className="text-lg font-semibold mb-3" style={{ color: edu.color }}>{edu.degree}</h4>
-                  <p className="text-gray-300">{edu.description}</p>
+              <div className="flex flex-col md:flex-row gap-8 items-start">
+                <div className="w-full md:w-1/4">
+                  <span className="text-sm text-gray-500 font-medium">{edu.year}</span>
                 </div>
-              </motion.div>
+                <div className="w-full md:w-3/4">
+                  <div className="flex items-start gap-4 mb-3">
+                    {edu.logo && (
+                      <img 
+                        src={edu.logo} 
+                        alt={`Logo ${edu.school}`}
+                        className="w-12 h-12 object-contain"
+                      />
+                    )}
+                    <div>
+                      <h3 className="text-2xl font-medium text-gray-900 mb-1">{edu.school}</h3>
+                      <p className="text-gray-600 font-medium mb-2">{edu.degree}</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed">{edu.description}</p>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
